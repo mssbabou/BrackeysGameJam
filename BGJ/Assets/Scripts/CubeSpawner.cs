@@ -17,6 +17,7 @@ public class CubeSpawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        transform.x = transform.x + Random.Range(-width, width);
+        print(transform.x);
     }
 }
