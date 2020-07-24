@@ -160,7 +160,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61f52d63c10b6544ea82aacd807dd0f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  camera: {fileID: 0}
+  desiredAspect: 0
+  desiredSize: 0
+  camera: {fileID: 519420031}
 --- !u!20 &519420031
 Camera:
   m_ObjectHideFlags: 0
