@@ -13,12 +13,15 @@ public class StandadCamera : MonoBehaviour
     [Range(0.01f, 15f)]
     public float desiredSize = 4.85f;
     Camera camera;
-    
+
     // Start is called before the first frame update
     void Start()
     {
         camera = GetComponent<Camera>();
+    }
 
+    private void Update()
+    {
         FixNullErrors();
 
         AdjustCamera();
