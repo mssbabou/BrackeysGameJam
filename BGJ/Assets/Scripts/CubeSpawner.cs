@@ -8,6 +8,13 @@ public class CubeSpawner : MonoBehaviour
 
     Transform transform;
 
+    Vector3 offset;
+
+    public GameObject prefab;
+
+    [Range(-15f, 15f)]
+    public float spawnHeight = 6f;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -17,7 +24,12 @@ public class CubeSpawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.x = transform.x + Random.Range(-width, width);
-        print(transform.x);
+        
+
+        offset = new Vector3(Random.Range(-width, width), spawnHeight, 0);
+
+        print(offset);
+
+        Instantiate(prefab, offset, Quaternion.identity);
     }
 }
