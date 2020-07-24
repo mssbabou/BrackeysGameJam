@@ -20,7 +20,8 @@ public class PlayerMovement : MonoBehaviour
 
     //Variable for player movement speed
     [Range(0.01f, 15f)]
-    public float speed;
+    [SerializeField]
+    private float speed;
 
     //Vector2 containing direction * speed
     private Vector2 velocity;

@@ -253,7 +253,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61f52d63c10b6544ea82aacd807dd0f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  desiredAspect: 1.4
+  desiredAspect: 1.31
   desiredSize: 4.85
 --- !u!20 &519420031
 Camera:
