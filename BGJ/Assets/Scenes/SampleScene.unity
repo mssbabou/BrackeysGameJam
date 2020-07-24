@@ -240,7 +240,9 @@ TextMesh:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 32809346}
-  m_Text: Hello World
+  m_Text: 'Please Please workkkkk
+
+'
   m_OffsetZ: 0
   m_CharacterSize: 0.1
   m_LineSpacing: 1
