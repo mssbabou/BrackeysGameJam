@@ -6,7 +6,10 @@ using UnityEngine;
 class EnemyMovement : MonoBehaviour
 {
     private bool onPlatformEdge = false;
-    private bool goingLeft = true;
+
+    [SerializeField]
+    private bool goingLeft = false;
+
     private Vector2 input;
 
     [SerializeField]
@@ -14,7 +17,7 @@ class EnemyMovement : MonoBehaviour
     // Start is called before the first frame update
     void Update()
     {
-
+         //Returns True if enemy is at the edge of a platform, used to change direction.
     }
 
     // Update is called once per frame
@@ -27,6 +30,7 @@ class EnemyMovement : MonoBehaviour
     {
         if(collision.collider.tag == "Platform")
         {
+            print("I collided with an object of tag " + collision.collider.tag);
             ChangeDirection();
         }
     }
@@ -36,10 +40,12 @@ class EnemyMovement : MonoBehaviour
         if (goingLeft)
         {
             goingLeft = false;
+            speed = speed * -1;
         }
         else
         {
             goingLeft = true;
+            speed = speed * -1;
         }
     }
 
