@@ -5,6 +5,8 @@ using UnityEngine;
 
 class EnemyMovement : MonoBehaviour
 {
+    private GameObject enemyHolder;
+
     private bool onPlatformEdge = false;
 
     [SerializeField]
@@ -15,6 +17,13 @@ class EnemyMovement : MonoBehaviour
     [SerializeField]
     private float speed;
     // Start is called before the first frame update
+
+    private void Start()
+    {
+        enemyHolder = GameObject.Find("Enemy Container");
+        transform.parent = enemyHolder.transform;
+    }
+
     void Update()
     {
          //Returns True if enemy is at the edge of a platform, used to change direction.
