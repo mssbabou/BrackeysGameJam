@@ -14,7 +14,6 @@ GameObject:
   - component: {fileID: 4506092938625046302}
   - component: {fileID: 4506092938625046298}
   - component: {fileID: 4506092938625046501}
-  - component: {fileID: 8535201826561383156}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -163,19 +162,3 @@ MonoBehaviour:
   isPlaying: 0
   isRecording: 0
   positions: []
---- !u!114 &8535201826561383156
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4506092938625046303}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 07d72a80851a1654c8c81a29ca57366d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  projectileForce: 4
-  projectile: {fileID: 2618130030935453550, guid: 535227ac6dfee4c47b275630fb495775,
-    type: 3}
-  offsetScale: 1
