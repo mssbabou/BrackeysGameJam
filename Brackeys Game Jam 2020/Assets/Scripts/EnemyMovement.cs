@@ -7,7 +7,7 @@ public class EnemyMovement : MonoBehaviour
     public float moveSpeed;
     public Transform groundCheck;
     public Transform wallCheck;
-    public float radius;
+    private float radius = 0.3f;
     public LayerMask wall;
  
     private bool facingRight;

@@ -28,6 +28,10 @@ public class PlayerReplayScript : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.P))
         {
+            if(isRecording)
+            {
+                isRecording = false;
+            }
             if (isPlaying == false)
             {
                 isPlaying = true;
@@ -46,6 +50,11 @@ public class PlayerReplayScript : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.R))
         {
+            if(isPlaying)
+            {
+                isPlaying = false;
+            }
+
             if (isRecording == false)
             {
                 isRecording = true;
