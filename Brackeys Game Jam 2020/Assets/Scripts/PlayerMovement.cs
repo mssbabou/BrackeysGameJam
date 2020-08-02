@@ -3,28 +3,26 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody2D))]
-public class PlayerMovement : MonoBehaviour
+class PlayerMovement : MonoBehaviour
 {
-    Transform transform;
     Rigidbody2D rigidbody2D;
-    float input;
+    private float input;
     [Header("Movement")]
     [SerializeField]
-    float speed = 7;
+    private float speed = 7;
 
     [SerializeField]
-    float jumpPower = 5;
+    private float jumpPower = 5;
 
     [Header("Jump Checker")]
     [SerializeField]
-    bool canJump = false;
+    private bool canJump = false;
 
     Vector2 moveAmount;
 
     // Start is called before the first frame update
     void Start()
     {
-        transform = GetComponent<Transform>();
         rigidbody2D = GetComponent<Rigidbody2D>();
     }
 
