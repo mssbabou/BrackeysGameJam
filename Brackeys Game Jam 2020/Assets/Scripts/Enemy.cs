@@ -24,4 +24,12 @@ public class Enemy : MonoBehaviour
             TakeDamage(FindObjectOfType<WeaponScript>().damage);
         }
     }
+
+    private void Update()
+    {
+        if(health == 0)
+        {
+            Destroy(gameObject);
+        }
+    }
 }
