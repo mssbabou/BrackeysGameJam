@@ -7,6 +7,10 @@ public class PlayerReplayScript : MonoBehaviour
 {
     public bool isPlaying = false;
     public bool isRecording = false;
+    private bool recordingCleared = false;
+    private bool setPositionToRecordingLengthDone = false;
+
+    private int position = 0;
 
     public List<Vector2> positions;
 
@@ -23,14 +27,37 @@ public class PlayerReplayScript : MonoBehaviour
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.P))
-            isPlaying = true;
-        else if (Input.GetKeyDown(KeyCode.P))
-            isPlaying = false;
+        {
+            if (isPlaying == false)
+            {
+                isPlaying = true;
+                print("setting play to true");
+            }
+            else
+            {
+                isPlaying = false;
+                print("setting play to false");
+            }
+            
+        }
+        
+       
+            
 
         if (Input.GetKeyDown(KeyCode.R))
-            isRecording = true;
-        else if (Input.GetKeyDown(KeyCode.R))
-            isRecording = false;
+        {
+            if (isRecording == false)
+            {
+                isRecording = true;
+                print("setting record to true");
+            }
+            else
+            {
+                isRecording = false;
+                print("setting record to false");
+            }
+        }
+            
 
 
     }
@@ -39,43 +66,80 @@ public class PlayerReplayScript : MonoBehaviour
     {
         if (isPlaying && !isRecording)
         {
+            if (!setPositionToRecordingLengthDone)
+            {
+                position = positions.Count - 1;
+                print("position set");
+            }
             Play();
+            
+            //print("called play method");
         }
         
-        if (!isPlaying && isPlaying)
+        if (!isPlaying && isRecording)
         {
             Record();
+            //print("called record method");
+        }
+
+        if (!isRecording)
+        {
+            if(positions.Count > 0)
+            {
+                recordingCleared = false;
+            }
+           
         }
 
     }
 
     void Play()
     {
-        if (positions.Count > 0)
+        setPositionToRecordingLengthDone = true;
+
+        if (position == 0)
         {
-            transform.position = positions[positions.Count - 1];
-            positions.RemoveAt(positions.Count - 1);
+            StopPlay();
+            print(position);
+            print("Countdown complete");
         }
         else
         {
-            StopPlay();
+            transform.position = positions[position];
+            position = position -1;
         }
-
     }
+
+        
+
+    
 
     void Record()
     {
+        ClearOldRecording();
         positions.Insert(0, transform.position);
+    }
+
+    void ClearOldRecording()
+    {
+        if (!recordingCleared)
+        {
+            recordingCleared = true;
+            positions = new List<Vector2>();
+        }
     }
 
     public void StartPlay()
     {
+        print("Called Stop Play Method");
         isPlaying = true;
         rb.isKinematic = true;
     }
 
     public void StopPlay()
     {
+        print("Called Stop Play Method");
+        setPositionToRecordingLengthDone = false;
         isPlaying = false;
         rb.isKinematic = false;
     }
