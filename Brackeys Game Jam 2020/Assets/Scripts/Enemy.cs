@@ -16,11 +16,6 @@ public class Enemy : MonoBehaviour
         health = maxHealth;
         healthBar.fillAmount = health;
     }
-    
-    void Update() {
-        Vector2 pos = new Vector2();
-        canvas.transform.position = transform.position;
-    }
 
     public void TakeDamage(float amount){
         health -= amount;
