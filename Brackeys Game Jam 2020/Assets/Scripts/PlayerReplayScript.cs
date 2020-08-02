@@ -5,39 +5,51 @@ using UnityEngine;
 
 public class PlayerReplayScript : MonoBehaviour
 {
-    public bool isRewinding = false;
+    public bool isPlaying = false;
+    public bool isRecording = false;
 
-    public List<Vector2> positions; 
+    public List<Vector2> positions;
+
+    Rigidbody2D rb;
 
     // Start is called before the first frame update
     void Start()
     {
         positions = new List<Vector2>();
+        rb = GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.LeftControl))
-            StartRewind();
-        else if (Input.GetKeyDown(KeyCode.LeftControl))
-            StopRewind();
+        if (Input.GetKeyDown(KeyCode.P))
+            isPlaying = true;
+        else if (Input.GetKeyDown(KeyCode.P))
+            isPlaying = false;
+
+        if (Input.GetKeyDown(KeyCode.R))
+            isRecording = true;
+        else if (Input.GetKeyDown(KeyCode.R))
+            isRecording = false;
+
 
     }
 
     void FixedUpdate()
     {
-        if (isRewinding)
+        if (isPlaying && !isRecording)
         {
-            Rewind();
+            Play();
         }
-        else
+        
+        if (!isPlaying && isPlaying)
         {
             Record();
-        } 
+        }
+
     }
 
-    void Rewind()
+    void Play()
     {
         if (positions.Count > 0)
         {
@@ -46,7 +58,7 @@ public class PlayerReplayScript : MonoBehaviour
         }
         else
         {
-            StopRewind();
+            StopPlay();
         }
 
     }
@@ -56,13 +68,15 @@ public class PlayerReplayScript : MonoBehaviour
         positions.Insert(0, transform.position);
     }
 
-    public void StartRewind()
+    public void StartPlay()
     {
-        isRewinding = true;
+        isPlaying = true;
+        rb.isKinematic = true;
     }
 
-    public void StopRewind()
+    public void StopPlay()
     {
-        isRewinding = false;
+        isPlaying = false;
+        rb.isKinematic = false;
     }
 }
