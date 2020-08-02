@@ -23,14 +23,32 @@ public class PlayerReplayScript : MonoBehaviour
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.P))
-            isPlaying = true;
-        else if (Input.GetKeyDown(KeyCode.P))
-            isPlaying = false;
+        {
+            if (isPlaying == false)
+            {
+                isPlaying = true;
+                print("setting play to true");
+            }
+            else
+            {
+                isPlaying = false;
+                print("setting play to false");
+            }
+            
+        }
+        
+       
+            
 
-        if (Input.GetKeyDown(KeyCode.R))
+        if (Input.GetKeyDown(KeyCode.R) && isRecording == false)
+        {
             isRecording = true;
-        else if (Input.GetKeyDown(KeyCode.R))
+        }           
+        else
+        {
             isRecording = false;
+        }
+            
 
 
     }
@@ -42,7 +60,7 @@ public class PlayerReplayScript : MonoBehaviour
             Play();
         }
         
-        if (!isPlaying && isPlaying)
+        if (!isPlaying && isRecording)
         {
             Record();
         }
