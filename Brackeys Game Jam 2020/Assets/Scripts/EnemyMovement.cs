@@ -39,7 +39,7 @@ public class EnemyMovement : MonoBehaviour
         facingRight = !facingRight;
     }
 
-    void OnDrawGizmos() {
+    void OnDrawGizmosSelected() {
         Gizmos.color = Color.red;   
         Gizmos.DrawWireSphere(wallCheck.position, radius);
     }
