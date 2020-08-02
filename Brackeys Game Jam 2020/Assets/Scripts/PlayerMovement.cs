@@ -47,7 +47,7 @@ class PlayerMovement : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.collider.tag == "Jumpable")
+        if (collision.collider.tag == "Platform")
         {
             canJump = true;
         }
