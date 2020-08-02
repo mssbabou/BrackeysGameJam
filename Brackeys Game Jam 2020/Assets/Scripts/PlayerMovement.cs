@@ -3,26 +3,28 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody2D))]
-class PlayerMovement : MonoBehaviour
+public class PlayerMovement : MonoBehaviour
 {
+    Transform transform;
     Rigidbody2D rigidbody2D;
-    private float input;
+    float input;
     [Header("Movement")]
     [SerializeField]
-    private float speed = 7;
+    float speed = 7;
 
     [SerializeField]
-    private float jumpPower = 5;
+    float jumpPower = 5;
 
     [Header("Jump Checker")]
     [SerializeField]
-    private bool canJump = false;
+    bool canJump = false;
 
     Vector2 moveAmount;
 
     // Start is called before the first frame update
     void Start()
     {
+        transform = GetComponent<Transform>();
         rigidbody2D = GetComponent<Rigidbody2D>();
     }
 
@@ -47,7 +49,7 @@ class PlayerMovement : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.collider.tag == "Platform")
+        if (collision.collider.tag == "Jumpable")
         {
             canJump = true;
         }
