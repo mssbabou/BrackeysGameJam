@@ -31,11 +31,8 @@ public class Enemy : MonoBehaviour
         }
     }
 
-    private void Update()
-    {
-        if(health == 0)
-        {
-            Destroy(gameObject);
-        }
+    void FixedUpdate(){
+        Vector3 pos = new Vector3(transform.position.x, canvas.transform.position.y, 0);
+        canvas.transform.position = pos;
     }
 }
