@@ -16,6 +16,7 @@ public class WeaponScript : MonoBehaviour
     private float offsetScale = 1.5f;
     private Vector2 direction;
     private Vector2 displacment;
+    public float damage;
     // Start is called before the first frame update
     void Start()
     {
