@@ -14,7 +14,7 @@ class EnemyMovement : MonoBehaviour
     // Start is called before the first frame update
     void Update()
     {
-        onPlatformEdge = Physics2D.OverlapCircle(.position, checkRadius, jumpable);
+
     }
 
     // Update is called once per frame
