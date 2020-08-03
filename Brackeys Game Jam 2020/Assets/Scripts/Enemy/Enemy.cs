@@ -35,6 +35,9 @@ public class Enemy : MonoBehaviour
                 Die();
             }
         }
+        if(col.gameObject.tag == "Killbox"){
+            Die();
+        }
     }
 
     public void Die(){
