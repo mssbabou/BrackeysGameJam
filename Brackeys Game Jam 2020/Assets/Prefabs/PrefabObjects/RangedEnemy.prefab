@@ -358,7 +358,7 @@ MonoBehaviour:
   wallCheck: {fileID: 832558077747741361}
   wall:
     serializedVersion: 2
-    m_Bits: 768
+    m_Bits: 2816
 --- !u!114 &832558078770125746
 MonoBehaviour:
   m_ObjectHideFlags: 0
