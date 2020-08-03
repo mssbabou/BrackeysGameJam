@@ -7,6 +7,7 @@ public class Enemy : MonoBehaviour
 {
     public float maxHealth;
     private float health;
+    GameObject enemyContainer;
 
     public Image healthBar;
 
@@ -16,6 +17,10 @@ public class Enemy : MonoBehaviour
         health = maxHealth;
         healthBar.fillAmount = health;
         anim = GetComponent<Animator>();
+
+        enemyContainer = GameObject.Find("Ranged Enemy Container");
+
+        transform.parent = enemyContainer.transform;
     }
 
     public void TakeDamage(float amount){
