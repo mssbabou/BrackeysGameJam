@@ -57,4 +57,10 @@ public class EnemyMovement : MonoBehaviour
         Gizmos.color = Color.red;   
         Gizmos.DrawWireSphere(wallCheck.position, radius);
     }
+
+    void OnCollisionEnter2D(Collision2D col){
+        if(col.gameObject.tag == "Enemy"){
+            Flip();
+        }
+    }
 }
