@@ -46,11 +46,6 @@ public class Player : MonoBehaviour
             StartCoroutine(GoInvincible(3));
             col.gameObject.GetComponent<EnemyMovement>().Flip();
         }
-        if(col.gameObject.tag == "Projectile"){
-            if(isInvincible) return;
-            TakeDamage(10);
-            StartCoroutine(GoInvincible(3));
-        }
     }
 
     IEnumerator GoInvincible(float time){
