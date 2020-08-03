@@ -17,10 +17,10 @@ public class WallButton : MonoBehaviour
     public ActivateButton ButtonActivated;
     public DeactivateButton ButtonDeactivated;
 
-    void OnMouseOver()
+    void OnMouseDown()
     {
         print("mouse over button");
-        if (Input.GetMouseButtonDown(0) && !triggered)
+        if(!triggered)
         {
             print("Triggered buton activate");
             StartCoroutine(ButtonActivation());
