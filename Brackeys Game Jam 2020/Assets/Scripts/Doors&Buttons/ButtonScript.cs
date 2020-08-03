@@ -6,43 +6,29 @@ using UnityEngine;
 public class ButtonScript : MonoBehaviour
 {
     [SerializeField]
-    private float moveSpeed;
-    private bool moveDown = false;
-    // Start is called before the first frame update
-    private void Update()
-    {
-        CheckForMove();
-    }
+    Animator animator;
 
-    // Update is called once per frame
-    private void OnCollisionEnter2D(Collision2D collision)
+
+    private void OnTriggerEnter2D(Collider2D collider)
     {
-        if (collision.collider.tag == "Player")
+        if(collider.tag == "Player")
         {
-            moveDown = true;
+            animator.SetBool("TriggerButtonAnimation", true);
+            print("Contact");
         }
     }
 
-    private void OnCollisionExit2D(Collision2D collision)
+    private void OnTriggerExit2D(Collider2D collider)
     {
-        if (collision.collider.tag == "Player")
+       if(collider.tag == "Player")
         {
-            moveDown = false;
-        }
+            StartCoroutine(ButtonUp());
+        } 
     }
-
-    private void CheckForMove()
+    private IEnumerator ButtonUp()
     {
-        if (moveDown)
-        {
-            transform.Translate(Vector2.down * moveSpeed * Time.deltaTime);
-        }
-        else
-        {
-            if (transform.localPosition.y < 0)
-            {
-                transform.Translate(Vector2.up * moveSpeed * Time.deltaTime);
-            }
-        }
+        yield return new WaitForSeconds(2);
+
+        animator.SetBool("TriggerButtonAnimation",false);
     }
 }
