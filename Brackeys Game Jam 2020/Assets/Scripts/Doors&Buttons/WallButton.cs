@@ -9,7 +9,7 @@ public class WallButton : MonoBehaviour
     public delegate void DeactivateButton();
 
     [SerializeField]
-    private bool triggered = false;
+    private bool triggered;
 
     [SerializeField]
     private float activationPeriodLength;
@@ -22,7 +22,7 @@ public class WallButton : MonoBehaviour
         print("mouse over button");
         if(!triggered)
         {
-            print("Triggered buton activate");
+            print("Triggered button activate");
             StartCoroutine(ButtonActivation());
         }
     }
@@ -35,7 +35,7 @@ public class WallButton : MonoBehaviour
         {
             ButtonActivated();
 
-            wallButtonSpriteRenderer.color = Color.green;
+            wallButtonSpriteRenderer.color = new Color(0, 255, 0, 255);
 
             triggered = true;
 
@@ -51,7 +51,7 @@ public class WallButton : MonoBehaviour
         {
             ButtonDeactivated();
 
-            wallButtonSpriteRenderer.color = Color.red;
+            wallButtonSpriteRenderer.color = new Color(225, 0, 0, 255);
 
             triggered = false;
 
