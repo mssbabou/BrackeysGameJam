@@ -15,11 +15,13 @@ public class Player : MonoBehaviour
 
     private bool isInvincible;
     private Animator anim;
+    private Animator camAnim;
 
     private GameObject deathPanel;
 
     void Start(){
         anim = GetComponent<Animator>();
+        camAnim = GameObject.Find("MainCamera").GetComponentInChildren<Animator>();
         health = maxHealth;
         healthBar.fillAmount = health;
         deathPanel = GameObject.Find("DeathPanel");
@@ -35,9 +37,16 @@ public class Player : MonoBehaviour
         hit = Instantiate(hitFeedback, transform.position, Quaternion.identity);
         Destroy(hit, 0.15f);
 
+        camAnim.SetTrigger("Shake");
+        Invoke("CameraIdle", 2f);
+
         if(health <= 0){
             Die();
         }
+    }
+
+    void CameraIdle(){
+        camAnim.SetTrigger("Idle");
     }
 
     void Die(){
