@@ -21,10 +21,6 @@ public class PlayerMovement : MonoBehaviour
 
     Vector2 moveAmount;
 
-    public float jumpTime;
-    private float jumpTimeCounter;
-    private bool isJumping;
-
     // Start is called before the first frame update
     void Start()
     {
@@ -42,21 +38,11 @@ public class PlayerMovement : MonoBehaviour
         {
             canJump = false;
             rigidbody2D.AddForce(new Vector2(0, jumpPower), ForceMode2D.Impulse);
-            isJumping = true;
-            jumpTimeCounter = jumpTime;
         }
 
-        if(Input.GetKey(KeyCode.Space) && isJumping)
+        if(Input.GetKey(KeyCode.Space) && canJump)
         {
-            if(jumpTimeCounter > 0){
-                rigidbody2D.velocity = Vector2.up * jumpPower;
-                jumpTimeCounter -= Time.deltaTime;
-            }else{
-                isJumping = false;
-            }
-        }
-        if(Input.GetKeyUp(KeyCode.Space)){
-            isJumping = false;
+            rigidbody2D.velocity = Vector2.up * jumpPower;
         }
     }
 
