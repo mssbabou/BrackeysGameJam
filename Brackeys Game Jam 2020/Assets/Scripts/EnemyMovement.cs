@@ -38,7 +38,7 @@ public class EnemyMovement : MonoBehaviour
     }
 
     int i = 0;
-    void Flip(){
+    public void Flip(){
         if(facingRight){
             transform.eulerAngles = new Vector3(0, -180, 0);
         }else{
