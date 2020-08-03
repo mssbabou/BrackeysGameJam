@@ -37,7 +37,7 @@ public class Player : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D col){
         if(col.gameObject.tag == "Enemy"){
-            Destroy(col.gameObject);
+            col.gameObject.GetComponent<Enemy>().Die();
             TakeDamage(10);
         }
     }

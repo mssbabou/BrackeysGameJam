@@ -829,6 +829,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: RangedEnemy
       objectReference: {fileID: 0}
+    - target: {fileID: 832558078770125773, guid: c57bbbbdb7e23d44ba22a93346ebcf32,
+        type: 3}
+      propertyPath: m_Mass
+      value: 210000
+      objectReference: {fileID: 0}
     - target: {fileID: 832558078770125775, guid: c57bbbbdb7e23d44ba22a93346ebcf32,
         type: 3}
       propertyPath: m_LocalPosition.x

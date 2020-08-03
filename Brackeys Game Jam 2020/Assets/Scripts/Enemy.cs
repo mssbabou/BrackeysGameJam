@@ -10,9 +10,12 @@ public class Enemy : MonoBehaviour
 
     public Image healthBar;
 
+    private Animator anim;
+
     void Start(){
         health = maxHealth;
         healthBar.fillAmount = health;
+        anim = GetComponent<Animator>();
     }
 
     public void TakeDamage(float amount){
@@ -24,8 +27,13 @@ public class Enemy : MonoBehaviour
         if(col.gameObject.tag == "Projectile"){
             TakeDamage(FindObjectOfType<WeaponScript>().damage);
             if(health <= 0){
-                Destroy(transform.parent.gameObject);
+                Die();
             }
         }
+    }
+
+    public void Die(){
+        anim.SetTrigger("Die");
+        Destroy(gameObject, 3);
     }
 }
