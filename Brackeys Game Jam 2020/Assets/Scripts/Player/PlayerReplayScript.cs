@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerReplayScript : MonoBehaviour
 {
@@ -26,6 +27,8 @@ public class PlayerReplayScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
+
         if (Input.GetKeyDown(KeyCode.P))
         {
             if(isRecording)
@@ -68,7 +71,11 @@ public class PlayerReplayScript : MonoBehaviour
         }
             
 
+        Image recording = GameObject.Find("Recording/ForeGround").GetComponent<Image>();
+        Image playing = GameObject.Find("Playing/ForeGround").GetComponent<Image>();
 
+        recording.enabled = isRecording;
+        playing.enabled = isPlaying;
     }
 
     void FixedUpdate()
