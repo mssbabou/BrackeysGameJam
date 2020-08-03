@@ -13,7 +13,11 @@ public class Player : MonoBehaviour
     public Image healthBar;
     public Text healthDisp;
 
+    private bool isInvincible;
+    private Animator anim;
+
     void Start(){
+        anim = GetComponent<Animator>();
         health = maxHealth;
         healthBar.fillAmount = health;
     }
@@ -37,8 +41,20 @@ public class Player : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D col){
         if(col.gameObject.tag == "Enemy"){
-            col.gameObject.GetComponent<Enemy>().Die();
+            if(isInvincible) return;
             TakeDamage(10);
+            StartCoroutine(GoInvincible(3));
+            col.gameObject.GetComponent<EnemyMovement>().Flip();
         }
+    }
+
+    IEnumerator GoInvincible(float time){
+        isInvincible = true;
+        anim.SetBool("isInvincible", true);
+
+        yield return new WaitForSeconds(time);
+
+        isInvincible = false;
+        anim.SetBool("isInvincible", false);
     }
 }
