@@ -9,6 +9,9 @@ public class WallButton : MonoBehaviour
     public delegate void DeactivateButton();
 
     [SerializeField]
+    private bool inRange = false;
+
+    [SerializeField]
     private bool triggered;
 
     [SerializeField]
@@ -17,21 +20,29 @@ public class WallButton : MonoBehaviour
     public ActivateButton ButtonActivated;
     public DeactivateButton ButtonDeactivated;
 
-    void OnMouseDown()
+    void OnTriggerEnter2D(Collider2D collider)
     {
-        print("mouse over button");
-        if(!triggered)
+        if(collider.name == "Player")
+        inRange = true;
+    }
+
+    private void OnTriggerExit2D(Collider2D collider)
+    {
+        if (collider.name == "Player")
+            inRange = false;
+    }
+
+    void OnMouseOver()
+    {
+        if (inRange && Input.GetMouseButtonDown(0))
         {
-            print("Triggered button activate");
             StartCoroutine(ButtonActivation());
         }
     }
 
+
     private IEnumerator ButtonActivation()
     {
-  
-        
-
         if (ButtonActivated != null)
         {
             ButtonActivated();

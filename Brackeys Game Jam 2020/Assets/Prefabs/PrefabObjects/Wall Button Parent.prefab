@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 502191971426311774}
   - component: {fileID: 2494946521907281617}
   - component: {fileID: 1805171439056672630}
-  - component: {fileID: 8180249567920648401}
+  - component: {fileID: 4444443682319382383}
   m_Layer: 0
   m_Name: Wall Button
   m_TagString: Untagged
@@ -98,8 +98,8 @@ MonoBehaviour:
   wallButtonSpriteRenderer: {fileID: 2494946521907281617}
   triggered: 0
   activationPeriodLength: 5
---- !u!58 &8180249567920648401
-CircleCollider2D:
+--- !u!70 &4444443682319382383
+CapsuleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -112,8 +112,8 @@ CircleCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 0.5
+  m_Size: {x: 6.17, y: 2.47}
+  m_Direction: 1
 --- !u!1 &4258269411202958191
 GameObject:
   m_ObjectHideFlags: 0

@@ -26,7 +26,6 @@ public class EnemyWeaponScript : MonoBehaviour
     void Start()
     {
         playerTransform = GameObject.Find("Player").GetComponent<Transform>();
-        print("runningcoroutine");
         StartCoroutine(PlayerCheck());
     }
 
@@ -35,21 +34,17 @@ public class EnemyWeaponScript : MonoBehaviour
         yield return new WaitForSeconds(2);
         displacment = new Vector2(playerTransform.position.x, playerTransform.position.y + (playerTransform.localScale.y/2)) - (Vector2)transform.position;
         distance = displacment.magnitude;
-        print(distance);
         if(distance < viewRange)
         {
             direction = displacment.normalized;
-            print(direction);
             unitCircleOffset = direction * offsetScale;
             ShootAtPlayer();
-            print("Starting new coroutine");
             StartCoroutine(PlayerCheck());
         }
     }
 
     void ShootAtPlayer()
     {
-        print("shot");
         velocity = direction * projectileForce;
         currentGameObject = Instantiate(projectile, (Vector2)transform.position + unitCircleOffset , Quaternion.identity);
         currentGameObject.GetComponent<Rigidbody2D>().AddForce(velocity, ForceMode2D.Impulse);
