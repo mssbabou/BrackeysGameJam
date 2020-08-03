@@ -385,10 +385,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d26c67c08caf0e4cac64a39428e63d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projectileForce: 0.56
-  viewRange: 0
+  projectileForce: 4.17
+  viewRange: 16
   offsetScale: 1.5
-  projectile: {fileID: 0}
+  projectile: {fileID: 2618130030935453550, guid: 535227ac6dfee4c47b275630fb495775,
+    type: 3}
   aimOffset: 1.3
 --- !u!95 &1669952751696625842
 Animator:
