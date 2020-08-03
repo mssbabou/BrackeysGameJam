@@ -8,4 +8,16 @@ public class DestroyOnCollision : MonoBehaviour
     {
         Destroy(gameObject);
     }
+
+    private void Start()
+    {
+        StartCoroutine(DestroyGameObject());
+    }
+
+    IEnumerator DestroyGameObject()
+    {
+        yield return new WaitForSeconds(10);
+        Destroy(gameObject);
+
+    }
 }
