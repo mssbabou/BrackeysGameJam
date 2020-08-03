@@ -16,19 +16,24 @@ public class Player : MonoBehaviour
     private bool isInvincible;
     private Animator anim;
 
+    private GameObject deathPanel;
+
     void Start(){
         anim = GetComponent<Animator>();
         health = maxHealth;
         healthBar.fillAmount = health;
+        deathPanel = GameObject.Find("DeathPanel");
+        deathPanel.SetActive(false);
     }
 
+    GameObject hit;
     public void TakeDamage(float amount){
         health -= amount;
         healthBar.fillAmount = health / maxHealth;
         healthDisp.text = health + "/" + maxHealth.ToString();
 
-        GameObject h = Instantiate(hitFeedback, transform.position, Quaternion.identity);
-        Destroy(h, 0.15f);
+        hit = Instantiate(hitFeedback, transform.position, Quaternion.identity);
+        Destroy(hit, 0.15f);
 
         if(health <= 0){
             Die();
@@ -36,7 +41,9 @@ public class Player : MonoBehaviour
     }
 
     void Die(){
-        print("You're Dead!!!");
+        deathPanel.SetActive(true);
+        hit.SetActive(false);
+        Time.timeScale = 0;
     }
 
     void OnCollisionEnter2D(Collision2D col){
