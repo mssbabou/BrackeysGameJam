@@ -17,17 +17,22 @@ public class PlayerReplayScript : MonoBehaviour
 
     Rigidbody2D rb;
 
+    private GameObject ghostPlayer;
+
     // Start is called before the first frame update
     void Start()
     {
         positions = new List<Vector2>();
         rb = GetComponent<Rigidbody2D>();
+        
+        ghostPlayer = GameObject.Find("Ghost");
+        ghostPlayer.SetActive(false);
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        ghostPlayer.SetActive(isPlaying);
 
         if (Input.GetKeyDown(KeyCode.P))
         {
@@ -116,12 +121,13 @@ public class PlayerReplayScript : MonoBehaviour
         if (position == 0)
         {
             StopPlay();
+            print("incactive");
             print(position);
             print("Countdown complete");
         }
         else
         {
-            transform.position = positions[position];
+            ghostPlayer.transform.position = positions[position];
             position = position -1;
         }
     }
