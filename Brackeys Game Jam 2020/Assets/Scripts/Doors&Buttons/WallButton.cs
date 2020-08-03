@@ -29,20 +29,22 @@ public class WallButton : MonoBehaviour
 
     private IEnumerator ButtonActivation()
     {
+  
         
 
         if (ButtonActivated != null)
         {
             ButtonActivated();
+        
 
-            wallButtonSpriteRenderer.color = new Color(0, 255, 0, 255);
+            wallButtonSpriteRenderer.color = new Color(0, 1, 0, 1);
+   
 
             triggered = true;
 
             yield return new WaitForSeconds(activationPeriodLength);
             StartCoroutine(ButtonDeactivation());
         }
-
     }
 
     private IEnumerator ButtonDeactivation()
@@ -51,7 +53,7 @@ public class WallButton : MonoBehaviour
         {
             ButtonDeactivated();
 
-            wallButtonSpriteRenderer.color = new Color(225, 0, 0, 255);
+            wallButtonSpriteRenderer.color = new Color(1, 0, 0, 1);
 
             triggered = false;
 
