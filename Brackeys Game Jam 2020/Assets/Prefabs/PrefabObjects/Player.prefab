@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 8535201826561383156}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -179,3 +179,4 @@ MonoBehaviour:
   projectile: {fileID: 2618130030935453550, guid: 535227ac6dfee4c47b275630fb495775,
     type: 3}
   offsetScale: 1
+  damage: 0
