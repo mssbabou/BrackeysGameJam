@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 832558077252638867}
   - component: {fileID: 832558077252638893}
   - component: {fileID: 832558077252638892}
-  m_Layer: 11
+  m_Layer: 5
   m_Name: healthBar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -86,7 +86,7 @@ GameObject:
   - component: {fileID: 832558077692512528}
   - component: {fileID: 832558077692512535}
   - component: {fileID: 832558077692512534}
-  m_Layer: 11
+  m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -183,7 +183,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 832558077747741361}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: WallDetection
   m_TagString: Untagged
   m_Icon: {fileID: 7148428337604731935, guid: 0000000000000000d000000000000000, type: 0}
@@ -220,7 +220,7 @@ GameObject:
   - component: {fileID: 832558078770125746}
   - component: {fileID: 832558078770125745}
   - component: {fileID: 1669952751696625842}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: RangedEnemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -421,7 +421,7 @@ GameObject:
   - component: {fileID: 832558079047381393}
   - component: {fileID: 832558079047381392}
   - component: {fileID: 832558079047381399}
-  m_Layer: 11
+  m_Layer: 5
   m_Name: fill
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -493,7 +493,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 832558079180971552}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: groundDetection
   m_TagString: Untagged
   m_Icon: {fileID: 7866945982896999795, guid: 0000000000000000d000000000000000, type: 0}

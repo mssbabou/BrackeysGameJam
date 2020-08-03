@@ -58,9 +58,6 @@ public class Player : MonoBehaviour
             TakeDamage(10);
             StartCoroutine(GoInvincible(2));
         }
-        if(col.gameObject.tag == "Killbox"){
-            Die();
-        }
     }
 
     IEnumerator GoInvincible(float time){

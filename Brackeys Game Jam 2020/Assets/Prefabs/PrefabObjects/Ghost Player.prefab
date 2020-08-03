@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5204516546587629546}
-  - component: {fileID: 4836841706501506586}
+  - component: {fileID: 8754985787244446860}
   m_Layer: 0
   m_Name: Ghost Player
   m_TagString: Untagged
@@ -32,7 +32,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &4836841706501506586
+--- !u!114 &8754985787244446860
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -41,7 +41,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 4620193987136470066}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 01cdaa09c8c39fa4281231c70ff85d97, type: 3}
+  m_Script: {fileID: 11500000, guid: e63b80c160f9cfa45840e5e9a0326608, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &6896001798222191042
