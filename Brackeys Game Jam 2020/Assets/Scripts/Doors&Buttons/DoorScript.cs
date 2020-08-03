@@ -12,9 +12,17 @@ public class DoorScript : MonoBehaviour
     Animator doorAnimator;
     // Start is called before the first frame update
     void Start()
-    {
-        button.GetComponent<ButtonScript>().doorActivation += OpenDoor;
-        button.GetComponent<ButtonScript>().doorDeactivation += CloseDoor;
+    { if(button.name == "Button")
+        {
+            button.GetComponent<ButtonScript>().ButtonActivated += OpenDoor;
+            button.GetComponent<ButtonScript>().ButtonDeactivated += CloseDoor;
+        }
+        else if(button.name == "Wall Button")
+        {
+            button.GetComponent<WallButton>().ButtonActivated += OpenDoor;
+            button.GetComponent<WallButton>().ButtonDeactivated += CloseDoor;
+        }
+        
     }
 
     private void OpenDoor()
