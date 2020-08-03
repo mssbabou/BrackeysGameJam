@@ -39,11 +39,6 @@ public class PlayerMovement : MonoBehaviour
             canJump = false;
             rigidbody2D.AddForce(new Vector2(0, jumpPower), ForceMode2D.Impulse);
         }
-
-        if(Input.GetKey(KeyCode.Space) && canJump)
-        {
-            rigidbody2D.velocity = Vector2.up * jumpPower;
-        }
     }
 
     // Update is called once per frame
