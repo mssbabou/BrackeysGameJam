@@ -16,6 +16,8 @@ public class PlayerReplayScript : MonoBehaviour
 
     Rigidbody2D rb;
 
+    public GameObject ghostObject;
+
     // Start is called before the first frame update
     void Start()
     {
