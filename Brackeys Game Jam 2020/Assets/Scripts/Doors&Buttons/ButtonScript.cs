@@ -19,7 +19,7 @@ public class ButtonScript : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collider)
     {
-        if(collider.tag == "Player")
+        if(collider.tag == "Player" || collider.tag == "Ghost")
         {
             animator.SetBool("TriggerButtonAnimation", true);
             ButtonActivation();
@@ -44,7 +44,7 @@ public class ButtonScript : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collider)
     {
-       if(collider.tag == "Player")
+        if(collider.tag == "Player" || collider.tag == "Ghost")
         {
             StartCoroutine(ButtonUp());
         } 

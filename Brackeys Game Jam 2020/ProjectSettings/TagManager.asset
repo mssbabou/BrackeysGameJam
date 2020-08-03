@@ -8,6 +8,7 @@ TagManager:
   - Enemy
   - Projectile
   - Platform
+  - Ghost
   layers:
   - Default
   - TransparentFX
