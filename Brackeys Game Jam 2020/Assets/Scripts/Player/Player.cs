@@ -34,7 +34,7 @@ public class Player : MonoBehaviour
         healthBar.fillAmount = health / maxHealth;
         healthDisp.text = health + "/" + maxHealth.ToString();
 
-        hit = Instantiate(hitFeedback, transform.position, Quaternion.identity);
+        hit = Instantiate(hitFeedback);
         Destroy(hit, 0.15f);
 
         camAnim.SetTrigger("Shake");
