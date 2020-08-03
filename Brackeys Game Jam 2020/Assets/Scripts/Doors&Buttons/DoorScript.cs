@@ -2,16 +2,19 @@
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class DoorScript : MonoBehaviour
 {
+    [SerializeField]
+    private GameObject button;
     [SerializeField]
     Animator doorAnimator;
     // Start is called before the first frame update
     void Start()
     {
-        FindObjectOfType<ButtonScript>().doorActivation += OpenDoor;
-        FindObjectOfType<ButtonScript>().doorDeactivation += CloseDoor;
+        button.GetComponent<ButtonScript>().doorActivation += OpenDoor;
+        button.GetComponent<ButtonScript>().doorDeactivation += CloseDoor;
     }
 
     private void OpenDoor()
