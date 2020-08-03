@@ -2,9 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ghostReplayScript : MonoBehaviour
+public class GhostReplayScript : MonoBehaviour
 {
-    
+    public PlayerReplayScript prs;
+    public List<Vector2> playerPos;
 
     void Start()
     {
@@ -15,5 +16,7 @@ public class ghostReplayScript : MonoBehaviour
     void Update()
     {
         
+
     }
+
 }
