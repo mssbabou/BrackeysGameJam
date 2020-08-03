@@ -22,4 +22,10 @@ public class GameManager : MonoBehaviour
         else
             Time.timeScale = 1;
     }
+
+    void Update(){
+        if(Input.GetKeyDown(KeyCode.Escape)){
+            Pause();
+        }
+    }
 }
