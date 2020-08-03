@@ -13,6 +13,13 @@ public class EnemyMovement : MonoBehaviour
     private bool facingRight;
     private bool touchingWall;
 
+    private GameObject canvas;
+
+    void Start(){
+        string canvasFind = gameObject.name + "/Canvas";
+        canvas = GameObject.Find(canvasFind);
+    }
+
     void Update(){
         //move
         transform.Translate(Vector2.left * moveSpeed * Time.deltaTime);
@@ -30,13 +37,20 @@ public class EnemyMovement : MonoBehaviour
         }
     }
 
+    int i = 0;
     void Flip(){
         if(facingRight){
             transform.eulerAngles = new Vector3(0, -180, 0);
         }else{
-            transform.eulerAngles = new Vector3(0, -0, 0);
+            transform.eulerAngles = new Vector3(0, 0, 0);
         }
         facingRight = !facingRight;
+        if(i == 1){
+            Vector3 canvasScaler = canvas.transform.localScale;
+            canvasScaler.x *= -1;
+            canvas.transform.localScale = canvasScaler;    
+        }
+        i = 1;
     }
 
     void OnDrawGizmosSelected() {

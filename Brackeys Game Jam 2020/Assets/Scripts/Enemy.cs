@@ -5,8 +5,6 @@ using UnityEngine.UI;
 
 public class Enemy : MonoBehaviour
 {
-    public GameObject canvas;
-
     public float maxHealth;
     private float health;
 
@@ -29,10 +27,5 @@ public class Enemy : MonoBehaviour
                 Destroy(transform.parent.gameObject);
             }
         }
-    }
-
-    void FixedUpdate(){
-        Vector3 pos = new Vector3(transform.position.x, canvas.transform.position.y, 0);
-        canvas.transform.position = pos;
     }
 }
