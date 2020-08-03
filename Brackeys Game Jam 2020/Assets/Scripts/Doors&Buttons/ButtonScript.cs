@@ -11,40 +11,40 @@ public class ButtonScript : MonoBehaviour
     [SerializeField]
     private float waitTime = 0;
 
-    public delegate void ActivateButton();
-    public delegate void DeactivateButton();
+    public delegate void ActivateDoor();
+    public ActivateDoor doorActivation;
 
-    public ActivateButton ButtonActivated;
-    public DeactivateButton ButtonDeactivated;
+    public delegate void DeactivateDoor();
+    public DeactivateDoor doorDeactivation;
 
     private void OnTriggerEnter2D(Collider2D collider)
     {
-        if(collider.tag == "Player")
+        if(collider.tag == "Player" || collider.tag == "Ghost")
         {
             animator.SetBool("TriggerButtonAnimation", true);
-            ButtonActivation();
+            activateDoor();
         }
     }
 
-    void ButtonActivation()
+    void activateDoor()
     {
-        if(ButtonActivated != null)
+        if(doorActivation != null)
         {
-            ButtonActivated();
+            doorActivation();
         }
     }
 
-    void ButtonDeactivation()
+    public void deactivateDoor()
     {
-        if (ButtonDeactivated != null)
+        if (doorDeactivation != null)
         {
-            ButtonDeactivated();
+            doorDeactivation();
         }
     }
 
     private void OnTriggerExit2D(Collider2D collider)
     {
-       if(collider.tag == "Player")
+        if(collider.tag == "Player" || collider.tag == "Ghost")
         {
             StartCoroutine(ButtonUp());
         } 
@@ -55,6 +55,6 @@ public class ButtonScript : MonoBehaviour
 
         animator.SetBool("TriggerButtonAnimation",false);
 
-        ButtonDeactivation();
+        deactivateDoor();
     }
 }
