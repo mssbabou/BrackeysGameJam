@@ -32,6 +32,7 @@ public class EnemyWeaponScript : MonoBehaviour
 
     IEnumerator PlayerCheck()
     {
+        yield return new WaitForSeconds(2);
         displacment = new Vector2(playerTransform.position.x, playerTransform.position.y + (playerTransform.localScale.y/2)) - (Vector2)transform.position;
         distance = displacment.magnitude;
         print(distance);
@@ -41,7 +42,6 @@ public class EnemyWeaponScript : MonoBehaviour
             print(direction);
             unitCircleOffset = direction * offsetScale;
             ShootAtPlayer();
-            yield return new WaitForSeconds(2);
             print("Starting new coroutine");
             StartCoroutine(PlayerCheck());
         }
