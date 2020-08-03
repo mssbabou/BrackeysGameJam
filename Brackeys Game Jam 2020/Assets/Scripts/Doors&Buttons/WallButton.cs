@@ -19,7 +19,6 @@ public class WallButton : MonoBehaviour
 
     void OnMouseOver()
     {
-        print("mouse over button");
         if (Input.GetMouseButtonDown(0) && !triggered)
         {
             print("Triggered buton activate");
@@ -35,7 +34,7 @@ public class WallButton : MonoBehaviour
         {
             ButtonActivated();
 
-            wallButtonSpriteRenderer.color = Color.green;
+            wallButtonSpriteRenderer.color = new Color(255, 0, 0, 255); //red
 
             triggered = true;
 
@@ -51,7 +50,7 @@ public class WallButton : MonoBehaviour
         {
             ButtonDeactivated();
 
-            wallButtonSpriteRenderer.color = Color.red;
+            wallButtonSpriteRenderer.color = new Color(0, 255, 0, 255); //green
 
             triggered = false;
 
