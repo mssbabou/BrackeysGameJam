@@ -8,7 +8,6 @@ TagManager:
   - Enemy
   - Projectile
   - Platform
-  - Ghost
   layers:
   - Default
   - TransparentFX
@@ -21,7 +20,7 @@ TagManager:
   - Wall
   - Ground
   - PostProcessing
-  - 
+  - FloorButton
   - 
   - 
   - 
@@ -43,6 +42,9 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Buttons
+    uniqueID: 731574157
+    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0
