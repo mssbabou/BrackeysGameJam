@@ -17,6 +17,7 @@ public class WeaponScript : MonoBehaviour
     private Vector2 direction;
     private Vector2 displacment;
     public float damage;
+    private bool canShoot = true;
     // Start is called before the first frame update
     void Start()
     {
@@ -30,16 +31,28 @@ public class WeaponScript : MonoBehaviour
 
         if (Input.GetMouseButtonDown(0))
         {
-            displacment = mousePosition - (Vector2)transform.position;
-            direction = displacment.normalized;
-            unitCircleOffset = direction * offsetScale;
-            ShootProjectile();
+            if (canShoot)
+            {
+                displacment = mousePosition - (Vector2)transform.position;
+                direction = displacment.normalized;
+                unitCircleOffset = direction * offsetScale;
+                ShootProjectile();
+            }
+            
         }
     }
 
     private void ShootProjectile()
     {
+        canShoot = false;
         GameObject currentProjectile = Instantiate(projectile, (Vector2)transform.position + unitCircleOffset, Quaternion.identity);
         currentProjectile.GetComponent<Rigidbody2D>().AddForce(direction * projectileForce, ForceMode2D.Impulse);
+        StartCoroutine(ReloadProjectile());
+    }
+
+    IEnumerator ReloadProjectile()
+    {
+        yield return new WaitForSeconds(1);
+        canShoot = true;
     }
 }
