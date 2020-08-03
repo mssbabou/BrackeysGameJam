@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
+    public GameObject pausePanel;
     bool paused;
 
     void Start(){
@@ -17,6 +18,7 @@ public class GameManager : MonoBehaviour
 
     public void Pause(){
         paused = !paused;
+        pausePanel.SetActive(paused);
         if(paused)
             Time.timeScale = 0;
         else
