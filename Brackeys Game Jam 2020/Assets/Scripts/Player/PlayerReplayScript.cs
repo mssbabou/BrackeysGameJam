@@ -6,6 +6,11 @@ using UnityEngine.UI;
 
 public class PlayerReplayScript : MonoBehaviour
 {
+    public float recordingTime;
+    private float time;
+
+    private bool canRecord;
+    private bool canPlay;
     public bool isPlaying = false;
     public bool isRecording = false;
     private bool recordingCleared = false;
@@ -26,6 +31,9 @@ public class PlayerReplayScript : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
 
         ghostPlayer = GameObject.Find("Ghost");
+        Physics2D.IgnoreCollision(ghostPlayer.GetComponent<Collider2D>(), GetComponent<Collider2D>());
+
+        time = recordingTime;
     }
 
     // Update is called once per frame
@@ -41,6 +49,7 @@ public class PlayerReplayScript : MonoBehaviour
             }
             if (isPlaying == false)
             {
+                if(!canPlay) return;
                 isPlaying = true;
                 print("setting play to true");
             }
@@ -64,6 +73,7 @@ public class PlayerReplayScript : MonoBehaviour
 
             if (isRecording == false)
             {
+                if(!canRecord) return;
                 isRecording = true;
                 print("setting record to true");
             }
@@ -74,9 +84,15 @@ public class PlayerReplayScript : MonoBehaviour
             }
         }
             
+        if(time <= 0)
+        {
+            isRecording = false;
+        }
 
         Image recording = GameObject.Find("Recording/ForeGround").GetComponent<Image>();
         Image playing = GameObject.Find("Playing/ForeGround").GetComponent<Image>();
+
+        recording.fillAmount = time / recordingTime;
 
         recording.enabled = isRecording;
         playing.enabled = isPlaying;
@@ -108,7 +124,11 @@ public class PlayerReplayScript : MonoBehaviour
             {
                 recordingCleared = false;
             }
-           
+            time = recordingTime;
+        }
+        else
+        {
+            time -= Time.deltaTime;
         }
 
     }
@@ -162,5 +182,22 @@ public class PlayerReplayScript : MonoBehaviour
         setPositionToRecordingLengthDone = false;
         isPlaying = false;
         rb.isKinematic = false;
+    }
+
+    void OnTriggerEnter2D(Collider2D collision) 
+    {
+        if(collision.gameObject.name.Contains("RecordingPlatform"))
+        {
+            canRecord = true;
+            canPlay = true;
+        }
+    }
+    void OnTriggerExit2D(Collider2D collision) 
+    {
+        if(collision.gameObject.name.Contains("RecordingPlatform"))
+        {
+            canRecord = false;
+            canPlay = false;
+        }
     }
 }
