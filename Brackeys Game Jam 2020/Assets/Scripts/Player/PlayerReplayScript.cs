@@ -8,6 +8,8 @@ public class PlayerReplayScript : MonoBehaviour
 {
     public float recordingTime;
     private float time;
+    private float playTime;
+    private float playTimer;
 
     private bool canRecord;
     private bool canPlay;
@@ -24,7 +26,6 @@ public class PlayerReplayScript : MonoBehaviour
 
     private GameObject ghostPlayer;
 
-    // Start is called before the first frame update
     void Start()
     {
         positions = new List<Vector2>();
@@ -33,10 +34,12 @@ public class PlayerReplayScript : MonoBehaviour
         ghostPlayer = GameObject.Find("Ghost");
         Physics2D.IgnoreCollision(ghostPlayer.GetComponent<Collider2D>(), GetComponent<Collider2D>());
 
+        if(recordingTime == 0){
+            recordingTime = 5;
+        }
         time = recordingTime;
     }
 
-    // Update is called once per frame
     void Update()
     {
         ghostPlayer.SetActive(isPlaying);
@@ -88,11 +91,21 @@ public class PlayerReplayScript : MonoBehaviour
         {
             isRecording = false;
         }
+        if(isRecording)
+        {
+            playTimer += Time.deltaTime;
+            playTime = playTimer;
+        }
+        else if(isPlaying)
+        {
+            playTime -= Time.deltaTime;
+        }
 
         Image recording = GameObject.Find("Recording/ForeGround").GetComponent<Image>();
         Image playing = GameObject.Find("Playing/ForeGround").GetComponent<Image>();
 
         recording.fillAmount = time / recordingTime;
+        playing.fillAmount = playTime / playTimer;
 
         recording.enabled = isRecording;
         playing.enabled = isPlaying;
@@ -186,7 +199,7 @@ public class PlayerReplayScript : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collision) 
     {
-        if(collision.gameObject.name.Contains("RecordingPlatform"))
+        if(collision.gameObject.tag == "RecordingPlatform")
         {
             canRecord = true;
             canPlay = true;
@@ -194,7 +207,7 @@ public class PlayerReplayScript : MonoBehaviour
     }
     void OnTriggerExit2D(Collider2D collision) 
     {
-        if(collision.gameObject.name.Contains("RecordingPlatform"))
+        if(collision.gameObject.tag == "RecordingPlatform")
         {
             canRecord = false;
             canPlay = false;

@@ -11,6 +11,7 @@ TagManager:
   - Ghost
   - Killbox
   - Boulder
+  - RecordingPlatform
   layers:
   - Default
   - TransparentFX
