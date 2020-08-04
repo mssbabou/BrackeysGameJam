@@ -6,6 +6,9 @@ using UnityEngine.UI;
 
 public class PlayerReplayScript : MonoBehaviour
 {
+    public float recordingTime;
+    private float time;
+
     public bool isPlaying = false;
     public bool isRecording = false;
     private bool recordingCleared = false;
@@ -26,6 +29,8 @@ public class PlayerReplayScript : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
 
         ghostPlayer = GameObject.Find("Ghost");
+
+        time = recordingTime;
     }
 
     // Update is called once per frame
@@ -74,9 +79,15 @@ public class PlayerReplayScript : MonoBehaviour
             }
         }
             
+        if(time <= 0)
+        {
+            isRecording = false;
+        }
 
         Image recording = GameObject.Find("Recording/ForeGround").GetComponent<Image>();
         Image playing = GameObject.Find("Playing/ForeGround").GetComponent<Image>();
+
+        recording.fillAmount = time / recordingTime;
 
         recording.enabled = isRecording;
         playing.enabled = isPlaying;
@@ -108,7 +119,11 @@ public class PlayerReplayScript : MonoBehaviour
             {
                 recordingCleared = false;
             }
-           
+            time = recordingTime;
+        }
+        else
+        {
+            time -= Time.deltaTime;
         }
 
     }
