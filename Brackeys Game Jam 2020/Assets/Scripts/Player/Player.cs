@@ -5,13 +5,13 @@ using UnityEngine.UI;
 
 public class Player : MonoBehaviour
 {
-    public float maxHealth;
-    private float health;
+    public int maxHealth = 10;
+    private int health;
 
     public GameObject hitFeedback;
 
     public Image healthBar;
-    public Text healthDisp;
+    public Sprite[] healthBar_Sprites;
 
     private bool isInvincible;
     private Animator anim;
@@ -23,16 +23,13 @@ public class Player : MonoBehaviour
         anim = GetComponent<Animator>();
         camAnim = GameObject.Find("MainCamera").GetComponentInChildren<Animator>();
         health = maxHealth;
-        healthBar.fillAmount = health;
         deathPanel = GameObject.Find("DeathPanel");
         deathPanel.SetActive(false);
     }
 
     GameObject hit;
-    public void TakeDamage(float amount){
+    public void TakeDamage(int amount){
         health -= amount;
-        healthBar.fillAmount = health / maxHealth;
-        healthDisp.text = health + "/" + maxHealth.ToString();
 
         hit = Instantiate(hitFeedback);
         Destroy(hit, 0.15f);
@@ -43,6 +40,8 @@ public class Player : MonoBehaviour
         if(health <= 0){
             Die();
         }
+
+        healthBar.sprite = healthBar_Sprites[health];
     }
 
     void CameraIdle(){
@@ -58,13 +57,13 @@ public class Player : MonoBehaviour
     void OnCollisionEnter2D(Collision2D col){
         if(col.gameObject.tag == "Enemy"){
             if(isInvincible) return;
-            TakeDamage(10);
+            TakeDamage(1);
             StartCoroutine(GoInvincible(2));
             col.gameObject.GetComponent<EnemyMovement>().Flip();
         }
         if(col.gameObject.tag == "Projectile"){
             if(isInvincible) return;
-            TakeDamage(10);
+            TakeDamage(1);
             StartCoroutine(GoInvincible(2));
         }
         if(col.gameObject.tag == "Killbox"){
