@@ -24,7 +24,7 @@ public class Player : MonoBehaviour
         camAnim = GameObject.Find("MainCamera").GetComponentInChildren<Animator>();
         health = maxHealth;
         deathPanel = GameObject.Find("DeathPanel");
-        deathPanel.SetActive(false);
+        //deathPanel.SetActive(false);
     }
 
     GameObject hit;

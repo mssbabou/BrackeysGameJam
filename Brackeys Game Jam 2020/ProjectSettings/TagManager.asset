@@ -12,6 +12,10 @@ TagManager:
   - Killbox
   - Boulder
   - RecordingPlatform
+  - DoorSize:small
+  - DoorSize:medium
+  - DoorSize:large
+  - DoorSize:extraLarge
   layers:
   - Default
   - TransparentFX
@@ -46,9 +50,15 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0
   - name: Buttons
     uniqueID: 731574157
     locked: 0
-  - name: Default
-    uniqueID: 0
+  - name: Door
+    uniqueID: 791114407
+    locked: 0
+  - name: Ground
+    uniqueID: 1805451755
     locked: 0
