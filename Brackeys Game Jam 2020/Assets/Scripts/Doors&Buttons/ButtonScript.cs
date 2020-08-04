@@ -17,6 +17,15 @@ public class ButtonScript : MonoBehaviour
     public ActivateButton ButtonActivated;
     public DeactivateButton ButtonDeactivated;
 
+    void Start()
+    {
+        GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
+        foreach(GameObject e in enemies)
+        {
+            Physics2D.IgnoreCollision(e.GetComponent<Collider2D>(), GetComponent<Collider2D>());
+        }
+    }
+
     private void OnTriggerEnter2D(Collider2D collider)
     {
         if(collider.tag == "Player" || collider.tag == "Ghost")
