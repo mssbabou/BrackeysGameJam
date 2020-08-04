@@ -4,19 +4,40 @@ using UnityEngine;
 
 public class DestroyOnCollision : MonoBehaviour
 {
+    [SerializeField]
+    private float lifeLength;
+    [SerializeField]
+    private float deathDelayLength;
+
+    private bool isBoulder = false;
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        Destroy(gameObject);
+        if (isBoulder)
+        {
+            if(collision.collider.tag == "KillBox")
+            {
+                StartCoroutine(DestroyGameObject(0));
+            }
+        }
+        else
+        {
+            StartCoroutine(DestroyGameObject(deathDelayLength));
+        }
+        
     }
 
     private void Start()
     {
-        StartCoroutine(DestroyGameObject());
+        StartCoroutine(DestroyGameObject(lifeLength));
+        if(gameObject.tag == "Boulder")
+        {
+            isBoulder = true;
+        }
     }
 
-    IEnumerator DestroyGameObject()
+    IEnumerator DestroyGameObject(float x)
     {
-        yield return new WaitForSeconds(10);
+        yield return new WaitForSeconds(x);
         Destroy(gameObject);
 
     }

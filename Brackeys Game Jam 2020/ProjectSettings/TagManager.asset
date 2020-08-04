@@ -10,6 +10,7 @@ TagManager:
   - Platform
   - Ghost
   - Killbox
+  - Boulder
   layers:
   - Default
   - TransparentFX

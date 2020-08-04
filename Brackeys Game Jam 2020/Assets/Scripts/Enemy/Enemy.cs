@@ -38,6 +38,11 @@ public class Enemy : MonoBehaviour
         if(col.gameObject.tag == "Killbox"){
             Die();
         }
+
+        if(col.gameObject.tag == "Boulder")
+        {
+            Die();
+        }
     }
 
     public void Die(){
