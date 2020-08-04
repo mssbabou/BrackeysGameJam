@@ -32,7 +32,6 @@ public class PlayerReplayScript : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
 
         ghostPlayer = GameObject.Find("Ghost");
-        Physics2D.IgnoreCollision(ghostPlayer.GetComponent<Collider2D>(), GetComponent<Collider2D>());
 
         if(recordingTime == 0){
             recordingTime = 5;

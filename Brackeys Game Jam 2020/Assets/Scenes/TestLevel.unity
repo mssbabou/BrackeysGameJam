@@ -3611,12 +3611,12 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 7
 --- !u!1 &1667447079 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 9205675452584304178, guid: d113e0a2efa180646850b8ca3cc86ddd,
