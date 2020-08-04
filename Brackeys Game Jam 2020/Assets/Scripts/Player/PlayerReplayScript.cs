@@ -77,12 +77,10 @@ public class PlayerReplayScript : MonoBehaviour
             {
                 if(!canRecord) return;
                 isRecording = true;
-                print("setting record to true");
             }
             else
             {
                 isRecording = false;
-                print("setting record to false");
             }
         }
             
