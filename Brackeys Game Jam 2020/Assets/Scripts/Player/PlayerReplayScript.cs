@@ -24,6 +24,7 @@ public class PlayerReplayScript : MonoBehaviour
 
     Rigidbody2D rb;
 
+    public GameObject ghostPlayerPrefab;
     private GameObject ghostPlayer;
 
     void Start()
@@ -31,7 +32,8 @@ public class PlayerReplayScript : MonoBehaviour
         positions = new List<Vector2>();
         rb = GetComponent<Rigidbody2D>();
 
-        ghostPlayer = GameObject.Find("Ghost");
+        ghostPlayer = Instantiate(ghostPlayerPrefab);
+        ghostPlayer.SetActive(false);
 
         if(recordingTime == 0){
             recordingTime = 5;
