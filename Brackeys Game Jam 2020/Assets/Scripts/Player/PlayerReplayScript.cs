@@ -41,7 +41,7 @@ public class PlayerReplayScript : MonoBehaviour
 
     void Update()
     {
-        ghostPlayer.SetActive(isPlaying);
+        //ghostPlayer.SetActive(isPlaying);
 
         if (Input.GetKeyDown(KeyCode.P))
         {
