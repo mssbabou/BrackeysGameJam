@@ -14,7 +14,7 @@ public class DoorScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        if(linkedButton.name == "floorButton")
+        if(linkedButton.name == "redFloorButton" || linkedButton.name == "blueFloorButton" || linkedButton.name == "greenFloorButton")
         {
             if (!inverted)
             {
