@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class doorScript : MonoBehaviour
+public class DoorScript : MonoBehaviour
 {
     [SerializeField]
     private bool inverted;
