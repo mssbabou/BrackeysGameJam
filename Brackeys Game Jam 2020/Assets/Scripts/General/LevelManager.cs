@@ -18,14 +18,17 @@ public class LevelManager : MonoBehaviour
             dontDestroyOnLoad = true;
             DontDestroyOnLoad(this);
         }
-        nextLevelUI = GameObject.Find("Canvas").transform.Find("NextLevel").gameObject;
         unlockedLevels = PlayerPrefs.GetInt("Unlocked");
+        string scenename = SceneManager.GetActiveScene().name;
+        if(scenename.Contains("Level")){
+            nextLevelUI = GameObject.Find("Canvas").transform.Find("NextLevel").gameObject;
+        }
     }
 
     public void LevelFinished(){
         currentLevel++;
         if(unlockedLevels <= currentLevel){
-            unlockedLevels = currentLevel + 1;
+            unlockedLevels = currentLevel;
         }
         PlayerPrefs.SetInt("Unlocked", unlockedLevels);
         levelName = "Level" + currentLevel.ToString();

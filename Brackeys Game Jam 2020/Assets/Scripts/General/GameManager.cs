@@ -11,8 +11,13 @@ public class GameManager : MonoBehaviour
     public Sprite pauseBtn;
     public Sprite pausedBtn;
 
+    public bool loaderScene;
+
     void Start(){
         Time.timeScale = 1;
+        if(loaderScene){
+            SceneManager.LoadScene("Level0");
+        }
     }
 
     public void Restart(){
