@@ -13,9 +13,6 @@ public class floorButtonScript : MonoBehaviour
     private bool playerOnButton = false;
 
     [SerializeField]
-    private float yOffset = 1;
-
-    [SerializeField]
     private Animator buttonAnimator;
     // Start is called before the first frame update
     void Start()

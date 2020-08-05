@@ -54,12 +54,10 @@ public class PlayerReplayScript : MonoBehaviour
             {
                 if(!canPlay) return;
                 isPlaying = true;
-                print("setting play to true");
             }
             else
             {
                 isPlaying = false;
-                print("setting play to false");
             }
             
         }
@@ -116,7 +114,6 @@ public class PlayerReplayScript : MonoBehaviour
             if (!setPositionToRecordingLengthDone)
             {
                 position = positions.Count - 1;
-                print("position set");
             }
             Play();
             
@@ -151,8 +148,6 @@ public class PlayerReplayScript : MonoBehaviour
         if (position == 0)
         {
             StopPlay();
-            print(position);
-            print("Countdown complete");
         }
         else
         {
@@ -182,14 +177,12 @@ public class PlayerReplayScript : MonoBehaviour
 
     public void StartPlay()
     {
-        print("Called Stop Play Method");
         isPlaying = true;
         rb.isKinematic = true;
     }
 
     public void StopPlay()
     {
-        print("Called Stop Play Method");
         setPositionToRecordingLengthDone = false;
         isPlaying = false;
         rb.isKinematic = false;

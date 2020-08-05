@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 2640711445694808825}
   m_Layer: 8
   m_Name: floorButton
-  m_TagString: Untagged
+  m_TagString: Jumpable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -150,7 +150,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20916b29420a07446a66716fe7d78f1a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  yOffset: 0.26
   buttonAnimator: {fileID: 2640711445694808825}
 --- !u!95 &2640711445694808825
 Animator:
@@ -195,7 +194,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2640711445713093529}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -17.5, y: -0.78, z: -1.670498}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2640711445694808773}
