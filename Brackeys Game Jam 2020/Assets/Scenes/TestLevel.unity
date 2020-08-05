@@ -468,7 +468,7 @@ PrefabInstance:
     - target: {fileID: 2640711445713093528, guid: 01ffeb3d932e65a4ba5fb6db08360d2a,
         type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 2640711445713093528, guid: 01ffeb3d932e65a4ba5fb6db08360d2a,
         type: 3}
@@ -967,7 +967,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: aef7131aef2db514ab47e1f4671c153d, type: 3}
     m_FontSize: 197
     m_FontStyle: 1
     m_BestFit: 0
@@ -1045,7 +1045,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: aef7131aef2db514ab47e1f4671c153d, type: 3}
     m_FontSize: 70
     m_FontStyle: 0
     m_BestFit: 0
@@ -1144,80 +1144,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 589617083}
   m_CullTransparentMesh: 0
---- !u!1001 &598392821
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 4596185131628863796, guid: 3dd2e9e09a2ba8543aa228ad6b3405fb,
-        type: 3}
-      propertyPath: m_Name
-      value: smallDoorParent (1)
-      objectReference: {fileID: 0}
-    - target: {fileID: 4596185131628863799, guid: 3dd2e9e09a2ba8543aa228ad6b3405fb,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0.63
-      objectReference: {fileID: 0}
-    - target: {fileID: 4596185131628863799, guid: 3dd2e9e09a2ba8543aa228ad6b3405fb,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -3.019516
-      objectReference: {fileID: 0}
-    - target: {fileID: 4596185131628863799, guid: 3dd2e9e09a2ba8543aa228ad6b3405fb,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4596185131628863799, guid: 3dd2e9e09a2ba8543aa228ad6b3405fb,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4596185131628863799, guid: 3dd2e9e09a2ba8543aa228ad6b3405fb,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4596185131628863799, guid: 3dd2e9e09a2ba8543aa228ad6b3405fb,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4596185131628863799, guid: 3dd2e9e09a2ba8543aa228ad6b3405fb,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4596185131628863799, guid: 3dd2e9e09a2ba8543aa228ad6b3405fb,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 4596185131628863799, guid: 3dd2e9e09a2ba8543aa228ad6b3405fb,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4596185131628863799, guid: 3dd2e9e09a2ba8543aa228ad6b3405fb,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4596185131628863799, guid: 3dd2e9e09a2ba8543aa228ad6b3405fb,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4596185131635851503, guid: 3dd2e9e09a2ba8543aa228ad6b3405fb,
-        type: 3}
-      propertyPath: linkedButton
-      value: 
-      objectReference: {fileID: 1760220822}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 3dd2e9e09a2ba8543aa228ad6b3405fb, type: 3}
 --- !u!1 &609889378
 GameObject:
   m_ObjectHideFlags: 0
@@ -1399,6 +1325,80 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 635427839}
   m_CullTransparentMesh: 0
+--- !u!1001 &661428993
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4596185131628863796, guid: 3dd2e9e09a2ba8543aa228ad6b3405fb,
+        type: 3}
+      propertyPath: m_Name
+      value: smallDoorParent
+      objectReference: {fileID: 0}
+    - target: {fileID: 4596185131628863799, guid: 3dd2e9e09a2ba8543aa228ad6b3405fb,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -8.488295
+      objectReference: {fileID: 0}
+    - target: {fileID: 4596185131628863799, guid: 3dd2e9e09a2ba8543aa228ad6b3405fb,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -3.0259697
+      objectReference: {fileID: 0}
+    - target: {fileID: 4596185131628863799, guid: 3dd2e9e09a2ba8543aa228ad6b3405fb,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4596185131628863799, guid: 3dd2e9e09a2ba8543aa228ad6b3405fb,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4596185131628863799, guid: 3dd2e9e09a2ba8543aa228ad6b3405fb,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4596185131628863799, guid: 3dd2e9e09a2ba8543aa228ad6b3405fb,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4596185131628863799, guid: 3dd2e9e09a2ba8543aa228ad6b3405fb,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4596185131628863799, guid: 3dd2e9e09a2ba8543aa228ad6b3405fb,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4596185131628863799, guid: 3dd2e9e09a2ba8543aa228ad6b3405fb,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4596185131628863799, guid: 3dd2e9e09a2ba8543aa228ad6b3405fb,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4596185131628863799, guid: 3dd2e9e09a2ba8543aa228ad6b3405fb,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4596185131635851503, guid: 3dd2e9e09a2ba8543aa228ad6b3405fb,
+        type: 3}
+      propertyPath: linkedButton
+      value: 
+      objectReference: {fileID: 803405755}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 3dd2e9e09a2ba8543aa228ad6b3405fb, type: 3}
 --- !u!1 &671542812
 GameObject:
   m_ObjectHideFlags: 0
@@ -1486,7 +1486,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: aef7131aef2db514ab47e1f4671c153d, type: 3}
     m_FontSize: 70
     m_FontStyle: 0
     m_BestFit: 0
@@ -2868,7 +2868,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: aef7131aef2db514ab47e1f4671c153d, type: 3}
     m_FontSize: 146
     m_FontStyle: 1
     m_BestFit: 0
@@ -2939,7 +2939,7 @@ PrefabInstance:
     - target: {fileID: 4696872558377230643, guid: b5bf00751eabc0f40a697ffc4d0232e0,
         type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4696872558377230643, guid: b5bf00751eabc0f40a697ffc4d0232e0,
         type: 3}
@@ -3434,13 +3434,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1da724da1ae076e4a95f0d9b20be9a4e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerTransform: {fileID: 1135422566}
-  inactiveSprite: {fileID: 8774957141590506983, guid: 8a30c856314a86f459f9bfa30d1e4e26,
-    type: 3}
-  activeSprite: {fileID: -5418613701882328366, guid: 8a30c856314a86f459f9bfa30d1e4e26,
-    type: 3}
-  wallButtonSprite: {fileID: 1500891215}
-  maxplayerDistanceFromButton: 3
 --- !u!212 &1500891215
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3575,7 +3568,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: aef7131aef2db514ab47e1f4671c153d, type: 3}
     m_FontSize: 70
     m_FontStyle: 0
     m_BestFit: 0
@@ -3781,7 +3774,7 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 205152168}
   m_PrefabAsset: {fileID: 0}
---- !u!1001 &2136220799
+--- !u!1001 &2138608976
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -3791,17 +3784,17 @@ PrefabInstance:
     - target: {fileID: 4596185131628863796, guid: 3dd2e9e09a2ba8543aa228ad6b3405fb,
         type: 3}
       propertyPath: m_Name
-      value: smallDoorParent
+      value: smallDoorParent (1)
       objectReference: {fileID: 0}
     - target: {fileID: 4596185131628863799, guid: 3dd2e9e09a2ba8543aa228ad6b3405fb,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -8.51
+      value: 0.51
       objectReference: {fileID: 0}
     - target: {fileID: 4596185131628863799, guid: 3dd2e9e09a2ba8543aa228ad6b3405fb,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.01
+      value: -3.0259697
       objectReference: {fileID: 0}
     - target: {fileID: 4596185131628863799, guid: 3dd2e9e09a2ba8543aa228ad6b3405fb,
         type: 3}
@@ -3831,7 +3824,7 @@ PrefabInstance:
     - target: {fileID: 4596185131628863799, guid: 3dd2e9e09a2ba8543aa228ad6b3405fb,
         type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4596185131628863799, guid: 3dd2e9e09a2ba8543aa228ad6b3405fb,
         type: 3}
@@ -3852,7 +3845,7 @@ PrefabInstance:
         type: 3}
       propertyPath: linkedButton
       value: 
-      objectReference: {fileID: 803405755}
+      objectReference: {fileID: 1760220822}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3dd2e9e09a2ba8543aa228ad6b3405fb, type: 3}
 --- !u!1 &2139809791
@@ -3912,7 +3905,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: aef7131aef2db514ab47e1f4671c153d, type: 3}
     m_FontSize: 70
     m_FontStyle: 0
     m_BestFit: 0

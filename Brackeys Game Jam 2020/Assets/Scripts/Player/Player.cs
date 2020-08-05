@@ -25,7 +25,7 @@ public class Player : MonoBehaviour
         anim = GetComponent<Animator>();
         camAnim = GameObject.Find("MainCamera").GetComponentInChildren<Animator>();
         health = maxHealth;
-        deathPanel = GameObject.Find("DeathPanel");
+        deathPanel = GameObject.Find("Canvas").transform.Find("DeathPanel").gameObject;
         //deathPanel.SetActive(false);
     }
 
