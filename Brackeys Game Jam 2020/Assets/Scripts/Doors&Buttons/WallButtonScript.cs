@@ -28,6 +28,9 @@ public class WallButtonScript : MonoBehaviour
     private float distanceFromPlayer;
     [SerializeField]
     private float maxDistance;
+
+    public GameObject e;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -46,10 +49,14 @@ public class WallButtonScript : MonoBehaviour
         distanceFromPlayer = displacmentFromPlayer.magnitude;
         if (distanceFromPlayer < maxDistance)
         {
+            e.SetActive(true);
+
             if (Input.GetKeyDown(KeyCode.E))
             {
                 ToggleState();
             }
+        }else{
+            e.SetActive(false);
         }
     }
 

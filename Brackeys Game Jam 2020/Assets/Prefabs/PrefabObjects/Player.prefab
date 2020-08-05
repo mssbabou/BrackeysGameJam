@@ -74,7 +74,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: fa8b4f3444c0fc74ea482c78a012a698, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -160,9 +160,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6cd2023390b1b204f8f1cb1720cbc5a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  recordingTime: 0
   isPlaying: 0
   isRecording: 0
   positions: []
+  ghostPlayerPrefab: {fileID: 0}
 --- !u!114 &8535201826561383156
 MonoBehaviour:
   m_ObjectHideFlags: 0
