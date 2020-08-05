@@ -9,10 +9,19 @@ public class floorButtonScript : MonoBehaviour
 
     public PlayerOnButton buttonActive;
     public PlayerOffButton buttonInactive;
+
+    private bool playerOnButton = false;
+
+    [SerializeField]
+    private float yOffset = 1;
+
+    [SerializeField]
+    private Animator buttonAnimator;
     // Start is called before the first frame update
     void Start()
     {
-        
+        buttonActive += buttonDown;
+        buttonInactive += buttonUp;
     }
 
     // Update is called once per frame
@@ -23,8 +32,10 @@ public class floorButtonScript : MonoBehaviour
 
     private void CheckForPlayerOnButton()
     {
-        if (Physics2D.Raycast(transform.position, Vector2.up, 2f))
-        {
+        
+        
+        if (playerOnButton)
+        { 
             if(buttonActive != null)
             {
                 buttonActive();
@@ -38,4 +49,29 @@ public class floorButtonScript : MonoBehaviour
             }          
         }
     }
+
+    private void buttonDown()
+    {
+        buttonAnimator.SetBool("buttonActive", true);
+    }
+
+    private void buttonUp()
+    {
+        buttonAnimator.SetBool("buttonActive", false);
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.tag == "Player")
+        {
+            playerOnButton = true;
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        playerOnButton = false;
+    }
+
+
 }

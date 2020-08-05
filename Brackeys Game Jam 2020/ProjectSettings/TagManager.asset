@@ -12,10 +12,7 @@ TagManager:
   - Killbox
   - Boulder
   - RecordingPlatform
-  - DoorSize:small
-  - DoorSize:medium
-  - DoorSize:large
-  - DoorSize:extraLarge
+  - Doors
   layers:
   - Default
   - TransparentFX

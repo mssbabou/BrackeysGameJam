@@ -18,11 +18,11 @@ public class doorScript : MonoBehaviour
 
     private void ActivateDoor()
     {
-
+        doorAnimator.SetBool("doorActive", true);
     }
 
     private void DeactivateDoor()
     {
-
+        doorAnimator.SetBool("doorActive", false);
     }
 }

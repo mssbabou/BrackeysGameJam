@@ -77,6 +77,14 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        if (collision.collider.tag == "Jumpable")
+        {
+            canJump = false;
+        }
+    }
+
     void Flip()
     {
         facingRight = !facingRight;
