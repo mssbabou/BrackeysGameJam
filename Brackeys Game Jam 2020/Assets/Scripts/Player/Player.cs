@@ -19,6 +19,8 @@ public class Player : MonoBehaviour
 
     private GameObject deathPanel;
 
+    public Color invincible;
+
     void Start(){
         anim = GetComponent<Animator>();
         camAnim = GameObject.Find("MainCamera").GetComponentInChildren<Animator>();
@@ -31,8 +33,8 @@ public class Player : MonoBehaviour
     public void TakeDamage(int amount){
         health -= amount;
 
-        hit = Instantiate(hitFeedback);
-        Destroy(hit, 0.15f);
+        //hit = Instantiate(hitFeedback);
+        //Destroy(hit, 0.15f);
 
         camAnim.SetTrigger("Shake");
         Invoke("CameraIdle", 2f);
@@ -42,10 +44,17 @@ public class Player : MonoBehaviour
         }
 
         healthBar.sprite = healthBar_Sprites[health];
+
+        anim.SetTrigger("Hurt");
+        Invoke("Idle", 0.15f);
     }
 
     void CameraIdle(){
         camAnim.SetTrigger("Idle");
+    }
+
+    void Idle(){
+        anim.SetTrigger("Idle");
     }
 
     void Die(){
@@ -73,11 +82,11 @@ public class Player : MonoBehaviour
 
     IEnumerator GoInvincible(float time){
         isInvincible = true;
-        anim.SetBool("isInvincible", true);
+        GetComponent<SpriteRenderer>().color = invincible;
 
         yield return new WaitForSeconds(time);
 
         isInvincible = false;
-        anim.SetBool("isInvincible", false);
+        GetComponent<SpriteRenderer>().color = Color.white;
     }
 }

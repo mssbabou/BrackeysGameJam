@@ -12,6 +12,8 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField]
     float speed = 7;
 
+    bool facingRight = true;
+
     [SerializeField]
     float jumpPower = 5;
 
@@ -21,16 +23,25 @@ public class PlayerMovement : MonoBehaviour
 
     Vector2 moveAmount;
 
+    private Animator anim;
+
     // Start is called before the first frame update
     void Start()
     {
         transform = GetComponent<Transform>();
         rigidbody2D = GetComponent<Rigidbody2D>();
+        anim = GetComponent<Animator>();
     }
 
     private void Update()
     {
+        bool isMoving;
         input = Input.GetAxisRaw("Horizontal");
+        if(input > 0 || input < 0){
+            isMoving = true;
+        }else{
+            isMoving = false;
+        }
 
         moveAmount = new Vector2(input * speed * Time.fixedDeltaTime, 0);
 
@@ -39,6 +50,17 @@ public class PlayerMovement : MonoBehaviour
             canJump = false;
             rigidbody2D.AddForce(new Vector2(0, jumpPower), ForceMode2D.Impulse);
         }
+
+        if(facingRight && input < 0)
+        {
+            Flip();
+        }else if(!facingRight && input > 0)
+        {
+            Flip();
+        }
+
+        anim.SetBool("isMoving", isMoving);
+        anim.SetBool("isGrounded", canJump);
     }
 
     // Update is called once per frame
@@ -53,5 +75,13 @@ public class PlayerMovement : MonoBehaviour
         {
             canJump = true;
         }
+    }
+
+    void Flip()
+    {
+        facingRight = !facingRight;
+        Vector2 scaler = transform.localScale;
+        scaler.x *= -1;
+        transform.localScale = scaler;
     }
 }
