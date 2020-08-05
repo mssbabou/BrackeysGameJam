@@ -1,25 +1,34 @@
 fileFormatVersion: 2
-guid: 3018951549b481a4bb138971d2130793
+guid: 2e6d4ee076fec474b982bcdc765ddde0
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -5653878121705019575
-    second: Player_Idle1
+      213: 426191884154302237
+    second: ScifiDoor_0
   - first:
-      213: 1335251186984836748
-    second: Player_Idle2
+      213: 1226917699848268477
+    second: ScifiDoor_1
   - first:
-      213: 3843040423100834259
-    second: Player_Walk2
+      213: -1136369422682322381
+    second: ScifiDoor_2
   - first:
-      213: 385077577419708428
-    second: Player_Jump
+      213: -9104351402389040895
+    second: ScifiDoor_3
   - first:
-      213: 8570058877390158369
-    second: Player_Walk1
+      213: -2381206583817221770
+    second: ScifiDoor_4
   - first:
-      213: 5776891531103278535
-    second: Player_Hurt
+      213: 5593302624464577128
+    second: ScifiDoor_5
+  - first:
+      213: -4302424672613312163
+    second: ScifiDoor_6
+  - first:
+      213: -3492690537593761284
+    second: ScifiDoor_7
+  - first:
+      213: -7522607111969503901
+    second: ScifiDoor_8
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -63,7 +72,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 13
+  spritePixelsToUnits: 8
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -117,127 +126,190 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Player_Idle1
+      name: ScifiDoor_0
       rect:
         serializedVersion: 2
-        x: 2
-        y: 26
-        width: 9
-        height: 13
+        x: 0
+        y: 32
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9476b68cdc36981b0800000000000000
-      internalID: -5653878121705019575
+      spriteID: d1feb25b2432ae500800000000000000
+      internalID: 426191884154302237
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player_Idle2
+      name: ScifiDoor_1
       rect:
         serializedVersion: 2
-        x: 15
-        y: 26
-        width: 9
-        height: 13
+        x: 16
+        y: 32
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c8e562e41e3c78210800000000000000
-      internalID: 1335251186984836748
+      spriteID: dba6814c523e60110800000000000000
+      internalID: 1226917699848268477
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player_Walk2
+      name: ScifiDoor_2
       rect:
         serializedVersion: 2
-        x: 15
-        y: 13
-        width: 9
-        height: 13
+        x: 32
+        y: 32
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3d1646c47e8355530800000000000000
-      internalID: 3843040423100834259
+      spriteID: 33a8763e70eca30f0800000000000000
+      internalID: -1136369422682322381
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player_Jump
+      name: ScifiDoor_3
       rect:
         serializedVersion: 2
-        x: 2
+        x: 0
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 101954ee2a8d6a180800000000000000
+      internalID: -9104351402389040895
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ScifiDoor_4
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 679c0ca6a3144fed0800000000000000
+      internalID: -2381206583817221770
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ScifiDoor_5
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 862a8743a176f9d40800000000000000
+      internalID: 5593302624464577128
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ScifiDoor_6
+      rect:
+        serializedVersion: 2
+        x: 0
         y: 0
-        width: 9
-        height: 13
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c08d1153402185500800000000000000
-      internalID: 385077577419708428
+      spriteID: d59d1043e87ba44c0800000000000000
+      internalID: -4302424672613312163
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player_Walk1
+      name: ScifiDoor_7
       rect:
         serializedVersion: 2
-        x: 2
-        y: 13
-        width: 9
-        height: 13
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 12af5039427fee670800000000000000
-      internalID: 8570058877390158369
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Player_Hurt
-      rect:
-        serializedVersion: 2
-        x: 15
+        x: 16
         y: 0
-        width: 9
-        height: 13
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7c59f518d34ab2050800000000000000
-      internalID: 5776891531103278535
+      spriteID: cf11b5c0678778fc0800000000000000
+      internalID: -3492690537593761284
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ScifiDoor_8
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3650b3a20b45a9790800000000000000
+      internalID: -7522607111969503901
       vertices: []
       indices: 
       edges: []

@@ -18,6 +18,10 @@ public class GameManager : MonoBehaviour
     public void Restart(){
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
+    public void FinishedRestart(){
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        FindObjectOfType<LevelManager>().currentLevel--;
+    }
 
     public void Pause(){
         paused = !paused;
@@ -36,5 +40,14 @@ public class GameManager : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.Escape)){
             Pause();
         }
+    }
+
+    public void Load(string sceneName){
+        SceneManager.LoadScene(sceneName);
+    }
+
+    public void NextLevel(){
+        LevelManager l = FindObjectOfType<LevelManager>();
+        l.LoadLevel(l.levelName);
     }
 }

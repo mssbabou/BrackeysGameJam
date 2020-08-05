@@ -51,12 +51,15 @@ public class PlayerMovement : MonoBehaviour
             rigidbody2D.AddForce(new Vector2(0, jumpPower), ForceMode2D.Impulse);
         }
 
-        if(facingRight && input < 0)
-        {
-            Flip();
-        }else if(!facingRight && input > 0)
-        {
-            Flip();
+        if(facingRight){
+            GetComponent<SpriteRenderer>().flipX = false;
+        }else{
+            GetComponent<SpriteRenderer>().flipX = true;
+        }
+        if(input > 0){
+            facingRight = true;
+        }if(input < 0){
+            facingRight = false;
         }
 
         anim.SetBool("isMoving", isMoving);

@@ -89,4 +89,8 @@ public class Player : MonoBehaviour
         isInvincible = false;
         GetComponent<SpriteRenderer>().color = Color.white;
     }
+
+    public void UseDoor(){
+        anim.SetTrigger("UseDoor");
+    }
 }

@@ -46,7 +46,7 @@ GameObject:
   - component: {fileID: 2689689940784421149}
   - component: {fileID: 5001445549780650011}
   m_Layer: 8
-  m_Name: floorButton
+  m_Name: redFloorButton
   m_TagString: Jumpable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
