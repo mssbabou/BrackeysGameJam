@@ -5,6 +5,8 @@ using UnityEngine;
 public class DoorScript : MonoBehaviour
 {
     [SerializeField]
+    private float waitBeforeCloseTime;
+    [SerializeField]
     private bool inverted;
     [SerializeField]
     GameObject linkedButton;
@@ -50,6 +52,12 @@ public class DoorScript : MonoBehaviour
 
     private void DeactivateDoor()
     {
+        StartCoroutine(pauseAnimation(waitBeforeCloseTime));  
+    }
+
+    private IEnumerator pauseAnimation(float f)
+    {
+        yield return new WaitForSeconds(f);
         doorAnimator.SetBool("doorActive", false);
     }
 }
