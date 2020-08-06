@@ -33,8 +33,8 @@ public class Player : MonoBehaviour
     public void TakeDamage(int amount){
         health -= amount;
 
-        //hit = Instantiate(hitFeedback);
-        //Destroy(hit, 0.15f);
+        hit = Instantiate(hitFeedback, transform.position, Quaternion.identity);
+        Destroy(hit, 0.15f);
 
         camAnim.SetTrigger("Shake");
         Invoke("CameraIdle", 2f);
@@ -44,6 +44,7 @@ public class Player : MonoBehaviour
         }
 
         healthBar.sprite = healthBar_Sprites[health];
+
 
         anim.SetTrigger("Hurt");
         Invoke("Idle", 0.15f);
@@ -59,7 +60,7 @@ public class Player : MonoBehaviour
 
     void Die(){
         deathPanel.SetActive(true);
-        //hit.SetActive(false);
+        hit.SetActive(false);
         Time.timeScale = 0;
     }
 

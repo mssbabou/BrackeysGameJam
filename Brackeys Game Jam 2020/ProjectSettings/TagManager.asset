@@ -69,3 +69,6 @@ TagManager:
   - name: canvas
     uniqueID: 2594422985
     locked: 0
+  - name: hit
+    uniqueID: 4249033229
+    locked: 0
