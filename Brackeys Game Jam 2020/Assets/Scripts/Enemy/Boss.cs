@@ -22,7 +22,11 @@ public class Boss : MonoBehaviour
     }
 
     void Update(){
-        
+        if(player.transform.position.x < transform.position.x){
+            GetComponent<SpriteRenderer>().flipX = true;
+        }else{
+            GetComponent<SpriteRenderer>().flipX = false;
+        }
     }
 
     void TakeDamage(float amount){

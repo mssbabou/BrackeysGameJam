@@ -48,9 +48,9 @@ public class EnemyWeaponScript : MonoBehaviour
 
     void ShootAtPlayer()
     {
-        shoot.Play();
         velocity = direction * projectileForce;
         currentGameObject = Instantiate(projectile, (Vector2)transform.position + unitCircleOffset , Quaternion.identity);
         currentGameObject.GetComponent<Rigidbody2D>().AddForce(velocity, ForceMode2D.Impulse);
+        shoot.Play();
     }
 }
