@@ -20,9 +20,9 @@ public class UIToggle : MonoBehaviour
     }
 
     public void music(){
-        GameObject.Find("MusicContainer").GetComponent<AudioSource>().mute = !activated;
+        FindObjectOfType<MusciManager>().mute = !activated;
     }
     public void sfx(){
-        
+
     }
 }
