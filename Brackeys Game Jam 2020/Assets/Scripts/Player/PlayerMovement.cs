@@ -73,10 +73,10 @@ public class PlayerMovement : MonoBehaviour
     }
 
     IEnumerator WalkAudio(){
-        if(isMoving){
+        if(isMoving && canJump){
             walk.Play();
             yield return new WaitForSeconds(0.35f);
-            if(isMoving){
+            if(isMoving && canJump){
                 walk.Play();
                 yield return new WaitForSeconds(0.45f);
                 StartCoroutine (WalkAudio());

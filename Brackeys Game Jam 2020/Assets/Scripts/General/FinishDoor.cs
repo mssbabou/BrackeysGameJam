@@ -11,8 +11,11 @@ public class FinishDoor : MonoBehaviour
     public delegate void GoneThroughDoor();
     public GoneThroughDoor PlayerFinishedLevel;
 
+    private AudioSource audio;
+
     void Start(){
         anim = GetComponent<Animator>();
+        audio = GetComponent<AudioSource>();
     }
 
     void OnTriggerEnter2D(Collider2D col){
@@ -33,6 +36,7 @@ public class FinishDoor : MonoBehaviour
             anim.SetTrigger("Open");
             if(Input.GetKeyDown(KeyCode.E))
             {
+                audio.Play();
                 FindObjectOfType<Player>().UseDoor();
                 FindObjectOfType<LevelManager>().LevelFinished();
                 PlayerFinishedLevel();
