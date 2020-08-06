@@ -16,8 +16,20 @@ public class GameManager : MonoBehaviour
     void Start(){
         Time.timeScale = 1;
         if(loaderScene){
-            SceneManager.LoadScene("Selection");
+            SceneManager.LoadScene("Menu");
         }
+    }
+
+    void Update(){
+        if(Input.GetKeyDown(KeyCode.Escape)){
+            Pause();
+        }
+    }
+
+    public void Play(){
+        string levelName = "Level";
+        levelName = levelName + FindObjectOfType<LevelManager>().unlockedLevels;
+        Load(levelName);
     }
 
     public void Restart(){
@@ -41,12 +53,6 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    void Update(){
-        if(Input.GetKeyDown(KeyCode.Escape)){
-            Pause();
-        }
-    }
-
     public void Load(string sceneName){
         SceneManager.LoadScene(sceneName);
     }
@@ -62,5 +68,9 @@ public class GameManager : MonoBehaviour
             string str = "Level" + levelIndex.ToString();
             Load(str);
         }
+    }
+
+    public void Exit(){
+        Application.Quit();
     }
 }
