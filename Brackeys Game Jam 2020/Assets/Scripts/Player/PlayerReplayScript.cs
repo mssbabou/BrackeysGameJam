@@ -197,6 +197,14 @@ public class PlayerReplayScript : MonoBehaviour
             canPlay = true;
         }  
     }
+    void OnTriggerStay2D(Collider2D collision) 
+    {
+        if(collision.gameObject.tag == "RecordingPlatform")
+        {
+            canRecord = true;
+            canPlay = true;
+        }
+    }
     void OnTriggerExit2D(Collider2D collision) 
     {
         if(collision.gameObject.tag == "RecordingPlatform")
