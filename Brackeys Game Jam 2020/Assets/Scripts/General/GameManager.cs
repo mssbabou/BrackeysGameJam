@@ -55,4 +55,8 @@ public class GameManager : MonoBehaviour
         LevelManager l = FindObjectOfType<LevelManager>();
         l.LoadLevel(l.levelName);
     }
+
+    public void LoadLevel(int levelIndex){
+
+    }
 }
