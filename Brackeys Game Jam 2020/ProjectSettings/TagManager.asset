@@ -17,6 +17,7 @@ TagManager:
   - RocketLauncher
   - Boss
   - Spike
+  - Unjumpable
   layers:
   - Default
   - TransparentFX

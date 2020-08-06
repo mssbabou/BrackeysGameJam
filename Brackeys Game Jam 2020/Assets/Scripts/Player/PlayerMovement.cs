@@ -78,6 +78,10 @@ public class PlayerMovement : MonoBehaviour
         {
             canJump = true;
         }
+        if (collision.collider.tag == "Unjumpable")
+        {
+            canJump = false;
+        }
     }
 
     private void OnCollisionExit2D(Collision2D collision)
