@@ -18,6 +18,7 @@ TagManager:
   - Boss
   - Spike
   - Unjumpable
+  - RecordingPlatformToo
   layers:
   - Default
   - TransparentFX

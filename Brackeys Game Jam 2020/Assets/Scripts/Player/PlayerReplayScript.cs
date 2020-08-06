@@ -11,9 +11,9 @@ public class PlayerReplayScript : MonoBehaviour
     private float playTime;
     private float playTimer;
 
-    [SerializeField]
     private bool canRecord;
     private bool canPlay;
+
     public bool isPlaying = false;
     public bool isRecording = false;
     private bool recordingCleared = false;
@@ -27,9 +27,6 @@ public class PlayerReplayScript : MonoBehaviour
 
     public GameObject ghostPlayerPrefab;
     private GameObject ghostPlayer;
-    
-    [Header("Audio")]
-    public AudioSource record_play_Sound;
 
     void Start()
     {
@@ -166,7 +163,6 @@ public class PlayerReplayScript : MonoBehaviour
 
     void Record()
     {
-        record_play_Sound.Play();
         ClearOldRecording();
         positions.Insert(0, transform.position);
     }
@@ -182,7 +178,6 @@ public class PlayerReplayScript : MonoBehaviour
 
     public void StartPlay()
     {
-        record_play_Sound.Play();
         isPlaying = true;
         rb.isKinematic = true;
     }
