@@ -101,8 +101,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 791114407
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: -6559377514482855309, guid: 493ab1bc2db99884ba47cd5c201567c3,
     type: 3}
@@ -173,5 +173,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1433959f249adc9449dc0236559f20d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  waitBeforeCloseTime: 0
+  inverted: 0
   linkedButton: {fileID: 0}
   doorAnimator: {fileID: 2459010870878554897}

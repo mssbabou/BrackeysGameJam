@@ -11,6 +11,7 @@ public class PlayerReplayScript : MonoBehaviour
     private float playTime;
     private float playTimer;
 
+    [SerializeField]
     private bool canRecord;
     private bool canPlay;
     public bool isPlaying = false;
@@ -194,7 +195,7 @@ public class PlayerReplayScript : MonoBehaviour
         {
             canRecord = true;
             canPlay = true;
-        }
+        }  
     }
     void OnTriggerExit2D(Collider2D collision) 
     {
