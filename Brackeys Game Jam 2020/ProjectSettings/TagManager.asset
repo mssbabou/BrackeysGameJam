@@ -16,6 +16,7 @@ TagManager:
   - Rocket
   - RocketLauncher
   - Boss
+  - Spike
   layers:
   - Default
   - TransparentFX

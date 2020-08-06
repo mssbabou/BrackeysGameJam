@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 13312, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: spriteSheet_4
+  m_Name: spike_1
   m_EditorClassIdentifier: 
-  m_Sprite: {fileID: 5840598288223990395, guid: 8a30c856314a86f459f9bfa30d1e4e26,
+  m_Sprite: {fileID: -1929834416523346238, guid: af150bf08bd21e246ada0fcb6ba32621,
     type: 3}
-  m_Color: {r: 0.028301895, g: 0.028301895, b: 0.028301895, a: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Transform:
     e00: 1
     e01: 0

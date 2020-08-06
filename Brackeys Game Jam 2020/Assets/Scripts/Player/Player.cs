@@ -78,6 +78,12 @@ public class Player : MonoBehaviour
         if(col.gameObject.tag == "Killbox"){
             Die();
         }
+        if(col.gameObject.tag == "Spike")
+        {
+            if (isInvincible) return;
+            TakeDamage(1);
+            StartCoroutine(GoInvincible(2));
+        }
     }
 
     IEnumerator GoInvincible(float time){
