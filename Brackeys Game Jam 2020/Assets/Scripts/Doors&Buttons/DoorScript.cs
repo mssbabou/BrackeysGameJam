@@ -13,6 +13,7 @@ public class DoorScript : MonoBehaviour
 
     [SerializeField]
     Animator doorAnimator;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -47,6 +48,7 @@ public class DoorScript : MonoBehaviour
 
     private void ActivateDoor()
     {
+        
         doorAnimator.SetBool("doorActive", true);
     }
 

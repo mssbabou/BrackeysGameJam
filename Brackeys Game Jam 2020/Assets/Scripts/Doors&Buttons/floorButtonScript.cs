@@ -14,6 +14,7 @@ public class floorButtonScript : MonoBehaviour
 
     [SerializeField]
     private Animator buttonAnimator;
+
     // Start is called before the first frame update
     void Start()
     {
