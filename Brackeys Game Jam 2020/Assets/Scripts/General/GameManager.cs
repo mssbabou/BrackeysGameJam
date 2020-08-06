@@ -16,7 +16,7 @@ public class GameManager : MonoBehaviour
     void Start(){
         Time.timeScale = 1;
         if(loaderScene){
-            SceneManager.LoadScene("Level0");
+            SceneManager.LoadScene("Selection");
         }
     }
 
@@ -57,6 +57,10 @@ public class GameManager : MonoBehaviour
     }
 
     public void LoadLevel(int levelIndex){
-
+        LevelManager l = FindObjectOfType<LevelManager>();
+        if(l.unlockedLevels >= levelIndex){
+            string str = "Level" + levelIndex.ToString();
+            Load(str);
+        }
     }
 }
