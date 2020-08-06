@@ -430,6 +430,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4696872558377230636, guid: b5bf00751eabc0f40a697ffc4d0232e0,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 0.19206122
+      objectReference: {fileID: 0}
+    - target: {fileID: 4696872558377230636, guid: b5bf00751eabc0f40a697ffc4d0232e0,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 0.3572051
+      objectReference: {fileID: 0}
+    - target: {fileID: 4696872558377230636, guid: b5bf00751eabc0f40a697ffc4d0232e0,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 0.49056602
+      objectReference: {fileID: 0}
     - target: {fileID: 4696872558377230637, guid: b5bf00751eabc0f40a697ffc4d0232e0,
         type: 3}
       propertyPath: m_Name
@@ -752,7 +767,7 @@ PrefabInstance:
     - target: {fileID: 2640711445713093528, guid: 01ffeb3d932e65a4ba5fb6db08360d2a,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -4.787
+      value: -4.65
       objectReference: {fileID: 0}
     - target: {fileID: 2640711445713093528, guid: 01ffeb3d932e65a4ba5fb6db08360d2a,
         type: 3}
@@ -1185,12 +1200,12 @@ PrefabInstance:
     - target: {fileID: 2640711445713093528, guid: 01ffeb3d932e65a4ba5fb6db08360d2a,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -15.435921
+      value: -14.25
       objectReference: {fileID: 0}
     - target: {fileID: 2640711445713093528, guid: 01ffeb3d932e65a4ba5fb6db08360d2a,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -4.787
+      value: -4.65
       objectReference: {fileID: 0}
     - target: {fileID: 2640711445713093528, guid: 01ffeb3d932e65a4ba5fb6db08360d2a,
         type: 3}
@@ -1519,7 +1534,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0.14117648, g: 0.15294118, b: 0.16862746, a: 0}
+  m_BackGroundColor: {r: 0.14177643, g: 0.15267888, b: 0.16981131, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -2315,9 +2330,9 @@ TilemapRenderer:
   m_MaxChunkCount: 16
   m_MaxFrameAge: 16
   m_SortOrder: 0
-  m_Mode: 1
+  m_Mode: 0
   m_DetectChunkCullingBounds: 0
-  m_MaskInteraction: 2
+  m_MaskInteraction: 0
 --- !u!1839735485 &932627048
 Tilemap:
   m_ObjectHideFlags: 0
@@ -5998,7 +6013,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1740143206}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -15.435921, y: -4.787, z: 0}
+  m_LocalPosition: {x: -14.25, y: -4.65, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 500656250}
@@ -6292,7 +6307,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2123096818}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.69, y: -4.787, z: 0}
+  m_LocalPosition: {x: -3.69, y: -4.65, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 327208129}
