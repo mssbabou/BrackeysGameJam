@@ -21,16 +21,23 @@ public class Player : MonoBehaviour
 
     public Color invincible;
 
+    [Header("Audio")]
+    public AudioSource hurt;
+    public AudioSource die;
+
     void Start(){
         anim = GetComponent<Animator>();
         camAnim = GameObject.Find("MainCamera").GetComponentInChildren<Animator>();
         health = maxHealth;
         deathPanel = GameObject.Find("Canvas").transform.Find("DeathPanel").gameObject;
         //deathPanel.SetActive(false);
+        healthBar = GameObject.Find("Canvas").transform.Find("Healthbar").gameObject.GetComponent<Image>();
     }
 
     GameObject hit;
     public void TakeDamage(int amount){
+        hurt.Play();
+
         health -= amount;
 
         hit = Instantiate(hitFeedback, transform.position, Quaternion.identity);
@@ -59,6 +66,7 @@ public class Player : MonoBehaviour
     }
 
     void Die(){
+        die.Play();
         deathPanel.SetActive(true);
         hit.SetActive(false);
         Time.timeScale = 0;
