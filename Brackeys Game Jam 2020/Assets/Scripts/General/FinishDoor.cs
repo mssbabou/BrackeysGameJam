@@ -8,6 +8,9 @@ public class FinishDoor : MonoBehaviour
     private bool open;
     public GameObject pressE;
 
+    public delegate void GoneThroughDoor();
+    public GoneThroughDoor PlayerFinishedLevel;
+
     void Start(){
         anim = GetComponent<Animator>();
     }
@@ -28,9 +31,11 @@ public class FinishDoor : MonoBehaviour
         pressE.SetActive(open);
         if(open){
             anim.SetTrigger("Open");
-            if(Input.GetKeyDown(KeyCode.E)){
+            if(Input.GetKeyDown(KeyCode.E))
+            {
                 FindObjectOfType<Player>().UseDoor();
                 FindObjectOfType<LevelManager>().LevelFinished();
+                PlayerFinishedLevel();
             }
         }
     }
