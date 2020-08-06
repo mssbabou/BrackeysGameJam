@@ -12,10 +12,17 @@ public class Boss : MonoBehaviour
 
     private Animator anim;
 
+    private GameObject player;
+
     void Start(){
+        anim = GetComponent<Animator>();
         health = maxHealth;
         healthBar_fill.fillAmount = health / maxHealth;
-        anim = GetComponent<Animator>();
+        player = GameObject.Find("Player");
+    }
+
+    void Update(){
+        
     }
 
     void TakeDamage(float amount){
