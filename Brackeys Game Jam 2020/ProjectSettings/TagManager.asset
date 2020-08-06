@@ -13,6 +13,9 @@ TagManager:
   - Boulder
   - RecordingPlatform
   - Doors
+  - Rocket
+  - RocketLauncher
+  - Boss
   layers:
   - Default
   - TransparentFX
