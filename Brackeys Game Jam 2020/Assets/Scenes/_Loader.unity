@@ -505,6 +505,8 @@ GameObject:
   - component: {fileID: 1897815779}
   - component: {fileID: 1897815780}
   - component: {fileID: 1897815778}
+  - component: {fileID: 1897815782}
+  - component: {fileID: 1897815781}
   m_Layer: 0
   m_Name: MusicContainer
   m_TagString: Untagged
@@ -587,6 +589,34 @@ MonoBehaviour:
   currentLevel: 0
   levelName: 
   dontDestroyOnLoad: 0
+--- !u!114 &1897815781
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1897815775}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3396bb46f78686e449494cd7206ed182, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  musicToBeFaded: {fileID: 1135400271}
+  volumeIncrement: 0.001
+--- !u!114 &1897815782
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1897815775}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3396bb46f78686e449494cd7206ed182, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  musicToBeFaded: {fileID: 841865814}
+  volumeIncrement: 0.001
 --- !u!1 &1898284953
 GameObject:
   m_ObjectHideFlags: 0
