@@ -19,6 +19,14 @@ public class musicFadeInScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        audio.volume = audio.volume + volumeIncrement;
+        if (audio.isActiveAndEnabled)
+        {
+            audio.volume = audio.volume + volumeIncrement;   
+        }
     }
+
+
+    
+
+
 }
