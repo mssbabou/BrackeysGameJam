@@ -27,6 +27,9 @@ public class PlayerReplayScript : MonoBehaviour
 
     public GameObject ghostPlayerPrefab;
     private GameObject ghostPlayer;
+    
+    [Header("Audio")]
+    public AudioSource record_play_Sound;
 
     void Start()
     {
@@ -163,6 +166,7 @@ public class PlayerReplayScript : MonoBehaviour
 
     void Record()
     {
+        record_play_Sound.Play();
         ClearOldRecording();
         positions.Insert(0, transform.position);
     }
@@ -178,6 +182,7 @@ public class PlayerReplayScript : MonoBehaviour
 
     public void StartPlay()
     {
+        record_play_Sound.Play();
         isPlaying = true;
         rb.isKinematic = true;
     }

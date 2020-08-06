@@ -22,6 +22,9 @@ public class EnemyWeaponScript : MonoBehaviour
     [SerializeField]
     float aimOffset;
 
+    [Header("Audio")]
+    public AudioSource shoot;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -45,6 +48,7 @@ public class EnemyWeaponScript : MonoBehaviour
 
     void ShootAtPlayer()
     {
+        shoot.Play();
         velocity = direction * projectileForce;
         currentGameObject = Instantiate(projectile, (Vector2)transform.position + unitCircleOffset , Quaternion.identity);
         currentGameObject.GetComponent<Rigidbody2D>().AddForce(velocity, ForceMode2D.Impulse);

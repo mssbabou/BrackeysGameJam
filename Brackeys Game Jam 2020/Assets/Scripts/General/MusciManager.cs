@@ -10,7 +10,7 @@ public class MusciManager : MonoBehaviour
     public GameObject boss;
 
     public bool mute;
-    
+
     void Update(){
         string sceneName = SceneManager.GetActiveScene().name;
         if(sceneName.Contains("Level")){
@@ -25,9 +25,9 @@ public class MusciManager : MonoBehaviour
             menu.SetActive(true);
             boss.SetActive(false);
             inGame.SetActive(false);
-        
+        }
         menu.GetComponent<AudioSource>().mute = mute;
-        inGame.GetComponent<AudioSource>().mute = mute;}
+        inGame.GetComponent<AudioSource>().mute = mute;
         boss.GetComponent<AudioSource>().mute = mute;
     }
 }

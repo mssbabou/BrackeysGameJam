@@ -13,6 +13,9 @@ public class Enemy : MonoBehaviour
 
     private Animator anim;
 
+    [Header("Audio")]
+    public AudioSource die;
+
     void Start(){
         health = maxHealth;
         healthBar.fillAmount = health;
@@ -46,6 +49,7 @@ public class Enemy : MonoBehaviour
     }
 
     public void Die(){
+        die.Play();
         anim.SetTrigger("Die");
         Destroy(gameObject, 3);
     }
