@@ -73,4 +73,9 @@ public class GameManager : MonoBehaviour
     public void Exit(){
         Application.Quit();
     }
+
+    public void ResetProgress(){
+        FindObjectOfType<LevelManager>().unlockedLevels = 0;
+        PlayerPrefs.SetInt("Unlocked", 0);
+    }
 }

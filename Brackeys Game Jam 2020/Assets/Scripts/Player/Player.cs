@@ -59,7 +59,7 @@ public class Player : MonoBehaviour
 
     void Die(){
         deathPanel.SetActive(true);
-        hit.SetActive(false);
+        //hit.SetActive(false);
         Time.timeScale = 0;
     }
 
