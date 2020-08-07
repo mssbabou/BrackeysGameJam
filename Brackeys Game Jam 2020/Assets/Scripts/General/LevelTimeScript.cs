@@ -25,6 +25,7 @@ public class LevelTimeScript : MonoBehaviour
 
     [Header("Rating")]
     public int levelIndex;
+    public Text highscore;
     public static int stars;
     public float threeStars, twoStars;
     public Image rating;
@@ -43,7 +44,7 @@ public class LevelTimeScript : MonoBehaviour
                 PlayerPrefs.SetInt(playerPrefs, stars);
             }
             stars = PlayerPrefs.GetInt(playerPrefs);
-            print("Best: " + stars);
+            highscore.text = "Best: " + stars + " stars";
         }
         if(finishDoor != null){
             finishDoor.GetComponent<FinishDoor>().PlayerFinishedLevel += StopTimeKeeper;
