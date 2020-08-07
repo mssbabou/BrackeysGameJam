@@ -7,6 +7,8 @@ public class UIToggle : MonoBehaviour
 {
     private bool activated = true;
 
+    private int playerprefs = 1;
+
     public Sprite yes;
     public Sprite no;
 
@@ -23,6 +25,6 @@ public class UIToggle : MonoBehaviour
         FindObjectOfType<MusciManager>().mute = !activated;
     }
     public void sfx(){
-
+        FindObjectOfType<MusciManager>().muteSFX = !activated;
     }
 }

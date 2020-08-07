@@ -10,6 +10,7 @@ public class MusciManager : MonoBehaviour
     public GameObject boss;
 
     public bool mute;
+    public bool muteSFX;
 
     void Update(){
         string sceneName = SceneManager.GetActiveScene().name;
@@ -29,5 +30,13 @@ public class MusciManager : MonoBehaviour
         menu.GetComponent<AudioSource>().mute = mute;
         inGame.GetComponent<AudioSource>().mute = mute;
         boss.GetComponent<AudioSource>().mute = mute;
+
+        AudioSource[] audios = FindObjectsOfType<AudioSource>();
+        foreach(AudioSource a in audios){
+            a.mute = muteSFX;
+            menu.GetComponent<AudioSource>().mute = mute;
+            inGame.GetComponent<AudioSource>().mute = mute;
+            boss.GetComponent<AudioSource>().mute = mute;
+        }
     }
 }
