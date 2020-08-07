@@ -6424,6 +6424,14 @@ MonoBehaviour:
   timeDisp: {fileID: 2140738876}
   finishDoor: {fileID: 643289457}
   levelFinished: 0
+  levelIndex: 0
+  levels:
+  - stars: 0
+  - stars: 0
+  - stars: 0
+  - stars: 0
+  - stars: 0
+  - stars: 0
   threeStars: 10
   twoStars: 20
   rating: {fileID: 0}
