@@ -20,6 +20,8 @@ TagManager:
   - Unjumpable
   - RecordingPlatformToo
   - NextLevel
+  - Explosion
+  - Laser
   layers:
   - Default
   - TransparentFX

@@ -363,3 +363,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rigidbody: {fileID: 3096090665565120076}
   speed: 20
+  explosionPrefab: {fileID: 5411969456476954531, guid: 782d1c3f0b4d5b045ba268c4c372f6fb,
+    type: 3}

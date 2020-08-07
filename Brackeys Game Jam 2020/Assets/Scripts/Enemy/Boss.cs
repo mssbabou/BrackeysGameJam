@@ -15,10 +15,19 @@ public class Boss : MonoBehaviour
 
     private Animator anim;
 
-    public LineRenderer leftEye;
-    public LineRenderer rightEye;
+    private bool laserAttack = true;
+    public float timeBtwShots;
+    private float time;
+    public GameObject laser;
+    public Transform leftEye;
+    public Transform rightEye;
 
-    private bool lazerAttack = true;
+    private bool finishHim;
+
+    public GameObject finishHimSetup;
+    public GameObject otherSetup;
+
+    public GameObject winPanel;
 
     void Start(){
         anim = GetComponent<Animator>();
@@ -26,6 +35,7 @@ public class Boss : MonoBehaviour
         healthBar_fill.fillAmount = health / maxHealth;
         player = GameObject.Find("Player");
         playerPos = new Vector2(player.transform.position.x + 1, player.transform.position.y);
+        time = timeBtwShots;
     }
 
     void Update(){
@@ -35,16 +45,19 @@ public class Boss : MonoBehaviour
             GetComponent<SpriteRenderer>().flipX = false;
         }
 
-        if(lazerAttack){
-            float timer = 0.5f;
-            timer -= Time.deltaTime;
-            if(timer <= 0){
-                timer = 0.5f;
-                lastPos = playerPos;
-                playerPos = player.transform.position;
-                rightEye.SetPosition(1, player.transform.position);
-                //leftEye.SetPosition(1, lastPos);
+        if(laserAttack){
+            time -= Time.deltaTime;
+            if(time <= 0){
+                time = timeBtwShots;
+                Instantiate(laser, leftEye.position, Quaternion.identity);
+                Instantiate(laser, rightEye.position, Quaternion.identity);
             }
+        }
+        if(health <= 1){
+            finishHim = true;
+            laserAttack = false;
+            finishHimSetup.SetActive(true);
+            otherSetup.SetActive(false);
         }
     }
 
@@ -52,8 +65,27 @@ public class Boss : MonoBehaviour
         health -= amount;
         healthBar_fill.fillAmount = health / maxHealth;
 
+        if(health <= 0){
+            Die();
+        }
+
         anim.SetTrigger("Hurt");
         Invoke("Idle", 0.15f);
+    }
+
+    void Die(){
+        anim.SetTrigger("Die");
+        AudioSource[] audios = FindObjectsOfType<AudioSource>();
+        foreach(AudioSource a in audios){
+            a.mute = true;
+        }
+        Invoke("Win", 3);
+    }
+
+    void Win(){
+        winPanel.GetComponent<AudioSource>().mute = false;
+        winPanel.SetActive(true);
+        Time.timeScale = 0;
     }
 
     void Idle(){
@@ -62,7 +94,7 @@ public class Boss : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D col){
         if(col.gameObject.tag == "Rocket"){
-            Destroy(col.gameObject);
+            col.gameObject.GetComponent<Rocket>()._Explode();
             TakeDamage(1);
         }
     }

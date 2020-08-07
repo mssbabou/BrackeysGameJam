@@ -11,6 +11,14 @@ public class RocketLauncher : MonoBehaviour
 
     private Animator anim;
 
+    public bool finisherRockets;
+
+    [SerializeField]
+    GameObject linkedButton;
+    [SerializeField]
+    public GameObject lastRocket1;
+    public GameObject lastRocket2;
+
     void Start(){
         anim = GetComponent<Animator>();
     }
@@ -24,6 +32,9 @@ public class RocketLauncher : MonoBehaviour
                 anim.SetTrigger("Use");
             }
         }
+
+        if(!finisherRockets) return;
+        linkedButton.GetComponent<WallButtonScript>().buttonActive += Activate1;
     }
 
     void OnTriggerEnter2D(Collider2D col){
@@ -35,5 +46,11 @@ public class RocketLauncher : MonoBehaviour
         if(col.gameObject.tag == "Player"){
             touchingPlayer = false;
         }
+    }
+
+    private void Activate1()
+    {
+        lastRocket1.GetComponent<Rocket>().Fire();
+        lastRocket2.GetComponent<Rocket>().Fire();
     }
 }
