@@ -6721,6 +6721,8 @@ MonoBehaviour:
   - {fileID: 1545902151051686009, guid: 9bd936e4e0120b042b3dcd0ebce00f36, type: 3}
   - {fileID: 3301125847436932941, guid: 9bd936e4e0120b042b3dcd0ebce00f36, type: 3}
   invincible: {r: 0.6792453, g: 0.6792453, b: 0.6792453, a: 1}
+  hurt: {fileID: 0}
+  die: {fileID: 0}
 --- !u!95 &1135422559
 Animator:
   serializedVersion: 3
@@ -7205,6 +7207,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 5
   healthBar_fill: {fileID: 885182007}
+  leftEye: {fileID: 0}
+  rightEye: {fileID: 0}
 --- !u!1 &1364245131
 GameObject:
   m_ObjectHideFlags: 0
@@ -8668,6 +8672,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 3096090665565120067, guid: 91467b070aa23dc46927e29c99fb71f7,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 91467b070aa23dc46927e29c99fb71f7, type: 3}
