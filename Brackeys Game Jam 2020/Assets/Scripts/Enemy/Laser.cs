@@ -7,15 +7,21 @@ public class Laser : MonoBehaviour
     public float speed;
 
     private Transform target;
-    Vector2 pos;
+    Vector3 pos;
 
     void Start(){
         target = GameObject.Find("Player").transform;
         pos = target.position;
+        Destroy(gameObject, 2);
     }
 
     void Update(){
-        transform.position = Vector2.MoveTowards(new Vector2(transform.position.x, transform.position.y), pos, speed * Time.deltaTime);
+        float distance = Vector3.Distance(transform.localPosition, pos);
+        Vector3 heading = pos - transform.localPosition;
+        Vector3 direction = heading / distance;
+             
+        float deltaSpeed = speed * Time.deltaTime;
+        transform.Translate(direction.x * deltaSpeed, direction.y * deltaSpeed, direction.z * deltaSpeed);
     }
 
     void OnCollisionEnter2D(Collision2D col){

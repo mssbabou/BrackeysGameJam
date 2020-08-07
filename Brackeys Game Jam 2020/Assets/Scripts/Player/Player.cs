@@ -92,6 +92,11 @@ public class Player : MonoBehaviour
             TakeDamage(1);
             StartCoroutine(GoInvincible(2));
         }
+        if(col.gameObject.tag == "Laser"){
+            if(isInvincible) return;
+            TakeDamage(2);
+            StartCoroutine(GoInvincible(2));
+        }
     }
 
     IEnumerator GoInvincible(float time){
