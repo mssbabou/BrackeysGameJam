@@ -15,13 +15,18 @@ public class Laser : MonoBehaviour
     void Start(){
         target = GameObject.Find("Player").transform;
         pos = target.position;
-        Destroy(gameObject, 2);
     }
 
     void Update(){
-        displacment = transform.position - target.transform.position;
+        displacment = transform.position - pos;
         direction = displacment.normalized;
         moveAmount = direction * speed * Time.deltaTime;
+
+        transform.Translate(-moveAmount * speed * Time.deltaTime);
+
+        if(transform.position.x == pos.x && transform.position.y == pos.y){
+            Destroy(gameObject);
+        }
     }
 
     void OnCollisionEnter2D(Collision2D col){

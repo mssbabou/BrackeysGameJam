@@ -8161,7 +8161,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 5
   healthBar_fill: {fileID: 885182007}
-  timeBtwShots: 2
+  timeBtwShots: 3
   laser: {fileID: 794584404656514144, guid: 918b45672488c0447925428863577ee0, type: 3}
   leftEye: {fileID: 693013869}
   rightEye: {fileID: 623599411}
