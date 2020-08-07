@@ -6423,6 +6423,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timeDisp: {fileID: 2140738876}
   finishDoor: {fileID: 643289457}
+  levelFinished: 0
+  threeStars: 10
+  twoStars: 20
+  rating: {fileID: 0}
+  ratings: []
 --- !u!4 &1351063474 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1947636694735638824, guid: 8074614ab62cb864686bc9df92dee698,

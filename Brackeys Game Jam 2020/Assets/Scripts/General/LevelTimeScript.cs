@@ -35,11 +35,11 @@ public class LevelTimeScript : MonoBehaviour
         startTime = Time.time;
         currentPlayTime = 0;
         timeToDisplay = 0;
-        if(finishDoor != null){
-            finishDoor.GetComponent<FinishDoor>().PlayerFinishedLevel += StopTimeKeeper;
-        }
         if(levelFinished){
             rating.sprite = ratings[stars];
+        }
+        if(finishDoor != null){
+            finishDoor.GetComponent<FinishDoor>().PlayerFinishedLevel += StopTimeKeeper;
         }
     }
     void Update()
