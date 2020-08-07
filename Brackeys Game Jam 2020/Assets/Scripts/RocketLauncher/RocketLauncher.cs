@@ -16,7 +16,7 @@ public class RocketLauncher : MonoBehaviour
     public bool canReload;
     public float reloadTime;
     private float time;
-    private bool canShoot;
+    private bool canShoot = true;
 
     [SerializeField]
     GameObject linkedButton;
@@ -43,9 +43,11 @@ public class RocketLauncher : MonoBehaviour
             if(time <= 0){
                 time = reloadTime;
                 canShoot = true;
+                anim.SetTrigger("Armed");
             }else{
                 canShoot = false;
                 time -= Time.deltaTime;
+                anim.SetTrigger("Reload");
             }
         }
 
