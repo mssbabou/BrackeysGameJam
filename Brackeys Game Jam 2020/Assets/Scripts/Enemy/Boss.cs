@@ -7,18 +7,25 @@ public class Boss : MonoBehaviour
 {
     public float maxHealth = 5;
     private float health;
-
     public Image healthBar_fill;
+
+    private GameObject player;
+    private Vector2 lastPos;
+    Vector2 playerPos;
 
     private Animator anim;
 
-    private GameObject player;
+    public LineRenderer leftEye;
+    public LineRenderer rightEye;
+
+    private bool lazerAttack = true;
 
     void Start(){
         anim = GetComponent<Animator>();
         health = maxHealth;
         healthBar_fill.fillAmount = health / maxHealth;
         player = GameObject.Find("Player");
+        playerPos = new Vector2(player.transform.position.x + 1, player.transform.position.y);
     }
 
     void Update(){
@@ -26,6 +33,18 @@ public class Boss : MonoBehaviour
             GetComponent<SpriteRenderer>().flipX = true;
         }else{
             GetComponent<SpriteRenderer>().flipX = false;
+        }
+
+        if(lazerAttack){
+            float timer = 0.5f;
+            timer -= Time.deltaTime;
+            if(timer <= 0){
+                timer = 0.5f;
+                lastPos = playerPos;
+                playerPos = player.transform.position;
+                rightEye.SetPosition(1, player.transform.position);
+                //leftEye.SetPosition(1, lastPos);
+            }
         }
     }
 
