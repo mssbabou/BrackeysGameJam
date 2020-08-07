@@ -12,6 +12,7 @@ public class Boss : MonoBehaviour
     private GameObject player;
     private Vector2 lastPos;
     Vector2 playerPos;
+    private bool facingRight = true;
 
     private Animator anim;
 
@@ -29,6 +30,11 @@ public class Boss : MonoBehaviour
 
     public GameObject winPanel;
 
+    [Header("Audio")]
+    public AudioSource shoot;
+    public AudioSource hurt;
+    public AudioSource die;
+
     void Start(){
         anim = GetComponent<Animator>();
         health = maxHealth;
@@ -39,16 +45,17 @@ public class Boss : MonoBehaviour
     }
 
     void Update(){
-        if(player.transform.position.x < transform.position.x){
-            GetComponent<SpriteRenderer>().flipX = true;
-        }else{
-            GetComponent<SpriteRenderer>().flipX = false;
+        if(player.transform.position.x < transform.position.x && facingRight){
+            Flip();
+        }else if(player.transform.position.x > transform.position.x && !facingRight){
+            Flip();
         }
 
         if(laserAttack){
             time -= Time.deltaTime;
             if(time <= 0){
                 time = timeBtwShots;
+                shoot.Play();
                 Instantiate(laser, leftEye.position, Quaternion.identity);
                 Instantiate(laser, rightEye.position, Quaternion.identity);
             }
@@ -62,6 +69,7 @@ public class Boss : MonoBehaviour
     }
 
     void TakeDamage(float amount){
+        hurt.Play();
         health -= amount;
         healthBar_fill.fillAmount = health / maxHealth;
 
@@ -74,10 +82,12 @@ public class Boss : MonoBehaviour
     }
 
     void Die(){
+        die.Play();
         anim.SetTrigger("Die");
         AudioSource[] audios = FindObjectsOfType<AudioSource>();
         foreach(AudioSource a in audios){
             a.mute = true;
+            die.mute = false;
         }
         Invoke("Win", 3);
     }
@@ -97,5 +107,12 @@ public class Boss : MonoBehaviour
             col.gameObject.GetComponent<Rocket>()._Explode();
             TakeDamage(1);
         }
+    }
+
+    void Flip(){
+        facingRight = !facingRight;
+        Vector3 scaler = transform.localScale;
+        scaler.x *= -1;
+        transform.localScale = scaler;
     }
 }

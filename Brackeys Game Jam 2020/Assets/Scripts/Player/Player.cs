@@ -94,7 +94,7 @@ public class Player : MonoBehaviour
         }
         if(col.gameObject.tag == "Laser"){
             if(isInvincible) return;
-            TakeDamage(2);
+            TakeDamage(1);
             StartCoroutine(GoInvincible(2));
         }
     }
