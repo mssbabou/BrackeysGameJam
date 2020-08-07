@@ -22,6 +22,13 @@ public class LevelTimeScript : MonoBehaviour
     public bool levelFinished;
 
     private bool stop = false;
+
+    [Header("Rating")]
+    public static int stars;
+    public float threeStars, twoStars;
+    public Image rating;
+    public Sprite[] ratings;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -30,6 +37,9 @@ public class LevelTimeScript : MonoBehaviour
         timeToDisplay = 0;
         if(finishDoor != null){
             finishDoor.GetComponent<FinishDoor>().PlayerFinishedLevel += StopTimeKeeper;
+        }
+        if(levelFinished){
+            rating.sprite = ratings[stars];
         }
     }
     void Update()
@@ -60,5 +70,12 @@ public class LevelTimeScript : MonoBehaviour
         endTime = Time.time;
         stop = true;
         timeToCompleteLevel = endTime - startTime;
+        if(timeToCompleteLevel <= threeStars){
+            stars = 3;
+        }else if(timeToCompleteLevel <= twoStars){
+            stars = 2;
+        }else{
+            stars = 1;
+        }
     }
 }
