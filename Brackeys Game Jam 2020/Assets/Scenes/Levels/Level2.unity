@@ -6054,7 +6054,7 @@ MonoBehaviour:
   - {fileID: -7796659902075397026, guid: 9bd936e4e0120b042b3dcd0ebce00f36, type: 3}
   - {fileID: 1545902151051686009, guid: 9bd936e4e0120b042b3dcd0ebce00f36, type: 3}
   - {fileID: 3301125847436932941, guid: 9bd936e4e0120b042b3dcd0ebce00f36, type: 3}
-  deathPanel: {fileID: 0}
+  deathPanel: {fileID: 1497796198}
   invincible: {r: 0.6792453, g: 0.6792453, b: 0.6792453, a: 1}
   hurt: {fileID: 4506092938034790503}
   die: {fileID: 4506092938034790502}

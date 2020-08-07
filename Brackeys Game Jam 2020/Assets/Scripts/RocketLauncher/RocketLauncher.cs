@@ -13,6 +13,11 @@ public class RocketLauncher : MonoBehaviour
 
     public bool finisherRockets;
 
+    public bool canReload;
+    public float reloadTime;
+    private float time;
+    private bool canShoot;
+
     [SerializeField]
     GameObject linkedButton;
     [SerializeField]
@@ -28,8 +33,19 @@ public class RocketLauncher : MonoBehaviour
 
         if(touchingPlayer){
             if(Input.GetKeyDown(KeyCode.E)){
+                if(!canShoot) return;
                 rocket.GetComponent<Rocket>().Fire();
                 anim.SetTrigger("Use");
+            }
+        }
+
+        if(canReload){
+            if(time <= 0){
+                time = reloadTime;
+                canShoot = true;
+            }else{
+                canShoot = false;
+                time -= Time.deltaTime;
             }
         }
 
