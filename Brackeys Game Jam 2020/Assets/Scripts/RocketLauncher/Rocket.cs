@@ -8,6 +8,8 @@ public class Rocket : MonoBehaviour
     public delegate void RocketExplode();
     public RocketExplode Explode;
 
+    public CircleCollider2D circleCollider;
+
     [SerializeField]
     private Rigidbody2D rigidbody;
     public float speed;

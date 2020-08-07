@@ -153,8 +153,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -45934067
+  m_SortingLayer: 6
   m_SortingOrder: 0
   m_Sprite: {fileID: 2294472042026125461, guid: d7457af4f5d81e243b2f9da15edff32b,
     type: 3}
@@ -208,6 +208,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rocket: {fileID: 3096090665565120064}
   e: {fileID: 3096090664497629709}
+  finisherRockets: 0
+  linkedButton: {fileID: 0}
+  lastRocket1: {fileID: 0}
+  lastRocket2: {fileID: 0}
 --- !u!95 &3096090664887108954
 Animator:
   serializedVersion: 3
@@ -299,7 +303,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -45934067
   m_SortingLayer: 6
-  m_SortingOrder: 0
+  m_SortingOrder: -1
   m_Sprite: {fileID: -9158349384845336690, guid: 61a82af728e72a640a45355dadaf9c6e,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -361,6 +365,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c21ee6af7005404bbf0a14aa1aeb344, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  circleCollider: {fileID: 0}
   rigidbody: {fileID: 3096090665565120076}
   speed: 20
   explosionPrefab: {fileID: 5411969456476954531, guid: 782d1c3f0b4d5b045ba268c4c372f6fb,
