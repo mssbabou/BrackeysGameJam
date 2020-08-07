@@ -2836,6 +2836,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   yes: {fileID: -9119277340760295990, guid: 35c45b9d731bf894aa99b112f37126ef, type: 3}
   no: {fileID: -8238310299315196264, guid: 35c45b9d731bf894aa99b112f37126ef, type: 3}
+  musicToggle: 1
 --- !u!1 &1591495745
 GameObject:
   m_ObjectHideFlags: 0
@@ -3003,6 +3004,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   yes: {fileID: -9119277340760295990, guid: 35c45b9d731bf894aa99b112f37126ef, type: 3}
   no: {fileID: -8238310299315196264, guid: 35c45b9d731bf894aa99b112f37126ef, type: 3}
+  musicToggle: 0
 --- !u!1 &1627166826
 GameObject:
   m_ObjectHideFlags: 0

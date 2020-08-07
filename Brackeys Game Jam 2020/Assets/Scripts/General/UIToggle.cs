@@ -7,10 +7,17 @@ public class UIToggle : MonoBehaviour
 {
     private bool activated = true;
 
-    private int playerprefs = 1;
-
     public Sprite yes;
     public Sprite no;
+
+    public bool musicToggle;
+
+    void Start(){
+        if(musicToggle)
+            activated = !FindObjectOfType<MusciManager>().mute;
+        else
+            activated = !FindObjectOfType<MusciManager>().muteSFX;
+    }
 
     public void OnClick(){
         activated = !activated;
