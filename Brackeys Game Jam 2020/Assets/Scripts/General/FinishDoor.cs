@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class FinishDoor : MonoBehaviour
 {
+    private bool noEnemys;
     private Animator anim;
     private bool open;
     public GameObject pressE;
@@ -13,7 +14,9 @@ public class FinishDoor : MonoBehaviour
 
     private AudioSource audio;
 
+
     void Start(){
+
         anim = GetComponent<Animator>();
         audio = GetComponent<AudioSource>();
     }
@@ -31,16 +34,28 @@ public class FinishDoor : MonoBehaviour
     }
 
     void Update(){
+        Enemy[] enemyList = FindObjectsOfType<Enemy>();
+        if (enemyList.Length == 0)
+        {
+            noEnemys = true;
+        }
+        else
+        {
+            noEnemys = false;
+        }
+
         pressE.SetActive(open);
         if(open){
             anim.SetTrigger("Open");
-            if(Input.GetKeyDown(KeyCode.E))
+            if(Input.GetKeyDown(KeyCode.E) && noEnemys)
             {
-                //audio.Play();
+                audio.Play();
                 FindObjectOfType<Player>().UseDoor();
                 FindObjectOfType<LevelManager>().LevelFinished();
                 PlayerFinishedLevel();
             }
         }
+
+        
     }
 }
