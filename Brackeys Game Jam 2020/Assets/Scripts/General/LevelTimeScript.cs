@@ -14,32 +14,36 @@ public class LevelTimeScript : MonoBehaviour
     private float endTime;
     private float currentPlayTime;
     
+    private float timeToDisplay;
+
     [HideInInspector]
     public static float timeToCompleteLevel;
 
     public bool levelFinished;
 
-    public bool stop = false;
+    private bool stop = false;
     // Start is called before the first frame update
     void Start()
     {
         startTime = Time.time;
+        currentPlayTime = 0;
+        timeToDisplay = 0;
         if(finishDoor != null){
             finishDoor.GetComponent<FinishDoor>().PlayerFinishedLevel += StopTimeKeeper;
         }
-        currentPlayTime = 0;
     }
     void Update()
     {
         if (!stop)
         {
             currentPlayTime = Time.time;
+            timeToDisplay  += Time.deltaTime;
         }
         if(timeDisp != null)
         {
             if(!levelFinished)
             {
-                float time = Mathf.Round(currentPlayTime);
+                float time = Mathf.Round(timeToDisplay);
                 timeDisp.text = "Time: " + time + " s";
             }
             else
