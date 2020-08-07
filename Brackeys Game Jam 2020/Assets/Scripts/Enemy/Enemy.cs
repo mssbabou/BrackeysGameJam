@@ -33,13 +33,7 @@ public class Enemy : MonoBehaviour
     }
 
     void OnCollisionEnter2D(Collision2D col) {
-        if(col.gameObject.tag == "Projectile"){
-            TakeDamage(FindObjectOfType<WeaponScript>().damage);
-            if(health <= 0){
-                Die();
-            }
-        }
-        if(col.gameObject.tag == "Explosion"){
+        if(col.gameObject.tag == "Rocket"){
             Die();
         }
         if(col.gameObject.tag == "Killbox"){
