@@ -17,7 +17,9 @@ public class LevelTimeScript : MonoBehaviour
     [HideInInspector]
     public static float timeToCompleteLevel;
 
-    private bool stop = false;
+    public bool levelFinished;
+
+    public bool stop = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -25,6 +27,7 @@ public class LevelTimeScript : MonoBehaviour
         if(finishDoor != null){
             finishDoor.GetComponent<FinishDoor>().PlayerFinishedLevel += StopTimeKeeper;
         }
+        currentPlayTime = 0;
     }
     void Update()
     {
@@ -32,9 +35,20 @@ public class LevelTimeScript : MonoBehaviour
         {
             currentPlayTime = Time.time;
         }
-        if(timeDisp != null){
-            timeDisp.text = "Needed Time: " + timeToCompleteLevel + " s";
+        if(timeDisp != null)
+        {
+            if(!levelFinished)
+            {
+                float time = Mathf.Round(currentPlayTime);
+                timeDisp.text = "Time: " + time + " s";
+            }
+            else
+            {
+                float time = Mathf.Round(timeToCompleteLevel);
+                timeDisp.text = "Time: " + time + " s";
+            }
         }
+        
     }
 
     void StopTimeKeeper()
@@ -42,7 +56,5 @@ public class LevelTimeScript : MonoBehaviour
         endTime = Time.time;
         stop = true;
         timeToCompleteLevel = endTime - startTime;
-        print(timeToCompleteLevel);
     }
-
 }

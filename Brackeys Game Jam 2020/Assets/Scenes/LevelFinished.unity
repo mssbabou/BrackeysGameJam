@@ -1208,6 +1208,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timeDisp: {fileID: 1714404499}
   finishDoor: {fileID: 1714404497}
+  levelFinished: 1
 --- !u!1 &1496280208
 GameObject:
   m_ObjectHideFlags: 0
