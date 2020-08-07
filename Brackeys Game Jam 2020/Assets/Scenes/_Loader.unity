@@ -265,7 +265,7 @@ AudioSource:
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -458,7 +458,7 @@ AudioSource:
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -640,7 +640,6 @@ MonoBehaviour:
   pauseBtn: {fileID: 0}
   pausedBtn: {fileID: 0}
   loaderScene: 1
-  nextLevelUI: {fileID: 0}
 --- !u!1 &1897815775
 GameObject:
   m_ObjectHideFlags: 0
@@ -794,7 +793,7 @@ AudioSource:
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -910,7 +909,6 @@ MonoBehaviour:
   currentLevel: 0
   levelName: 
   dontDestroyOnLoad: 0
-  nextLevelUI: {fileID: 0}
 --- !u!4 &2039087095
 Transform:
   m_ObjectHideFlags: 0
@@ -942,4 +940,3 @@ MonoBehaviour:
   pauseBtn: {fileID: 0}
   pausedBtn: {fileID: 0}
   loaderScene: 0
-  nextLevelUI: {fileID: 0}
