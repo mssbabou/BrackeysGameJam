@@ -1,16 +1,24 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SocialPlatforms;
 
 public class Rocket : MonoBehaviour
 {
+    public delegate void RocketExplode();
+    public RocketExplode Explode;
+
+    [SerializeField]
+    private Rigidbody2D rigidbody;
     public float speed;
 
     bool flying;
 
-    void Update(){
-        if(flying){
-            transform.Translate(new Vector2(0, 1) * speed);
+    void FixedUpdate(){
+        if(flying)
+        {
+
+            transform.localPosition = (Vector2)transform.localPosition + (Vector2.up * speed * Time.fixedDeltaTime);
         }
     }
 

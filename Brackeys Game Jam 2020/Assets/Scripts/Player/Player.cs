@@ -17,6 +17,7 @@ public class Player : MonoBehaviour
     private Animator anim;
     private Animator camAnim;
 
+    [SerializeField]
     private GameObject deathPanel;
 
     public Color invincible;
@@ -29,9 +30,7 @@ public class Player : MonoBehaviour
         anim = GetComponent<Animator>();
         camAnim = GameObject.Find("MainCamera").GetComponentInChildren<Animator>();
         health = maxHealth;
-        deathPanel = GameObject.Find("Canvas").transform.Find("DeathPanel").gameObject;
-        //deathPanel.SetActive(false);
-        healthBar = GameObject.Find("Canvas").transform.Find("Healthbar").gameObject.GetComponent<Image>();
+        deathPanel.SetActive(false);
     }
 
     GameObject hit;

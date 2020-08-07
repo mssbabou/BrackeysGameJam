@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -8,6 +9,8 @@ public class Enemy : MonoBehaviour
     public float maxHealth;
     private float health;
     GameObject enemyContainer;
+
+    private GameObject[] rockets;
 
     public Image healthBar;
 
@@ -22,8 +25,6 @@ public class Enemy : MonoBehaviour
         anim = GetComponent<Animator>();
 
         enemyContainer = GameObject.Find("Ranged Enemy Container");
-
-        transform.parent = enemyContainer.transform;
     }
 
     public void TakeDamage(float amount){
@@ -53,4 +54,5 @@ public class Enemy : MonoBehaviour
         anim.SetTrigger("Die");
         Destroy(gameObject, 3);
     }
+
 }

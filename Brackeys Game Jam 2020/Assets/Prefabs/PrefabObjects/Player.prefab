@@ -423,8 +423,8 @@ MonoBehaviour:
   isPlaying: 0
   isRecording: 0
   positions: []
-  ghostPlayerPrefab: {fileID: 0}
-  record_play_Sound: {fileID: 0}
+  ghostPlayerPrefab: {fileID: 8695634977879149148, guid: fd1c9a32018205b4dbbe14e9080cc202,
+    type: 3}
 --- !u!114 &8535201826561383156
 MonoBehaviour:
   m_ObjectHideFlags: 0
