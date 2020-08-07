@@ -34,7 +34,7 @@ public class WallButtonScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        playerTransform = GameObject.Find("Player").GetComponent<Transform>();
     }
 
     // Update is called once per frame

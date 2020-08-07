@@ -89,7 +89,7 @@ public class Player : MonoBehaviour
         if(col.gameObject.tag == "Spike")
         {
             if (isInvincible) return;
-            TakeDamage(1);
+            Die();
             StartCoroutine(GoInvincible(2));
         }
         if(col.gameObject.tag == "Laser"){
