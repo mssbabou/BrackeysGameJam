@@ -31,7 +31,7 @@ public class Rocket : MonoBehaviour
     }
 
     void OnCollisionEnter2D(Collision2D col){
-        if(col.gameObject.tag == "Player" || col.gameObject.tag == "Projectile"){
+        if(col.gameObject.tag == "Player" || col.gameObject.tag == "Projectile" || col.gameObject.tag == "Laser"){
             Physics2D.IgnoreCollision(col.gameObject.GetComponent<Collider2D>(), GetComponent<Collider2D>());
         }else{
             _Explode();
