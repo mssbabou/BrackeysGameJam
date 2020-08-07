@@ -6,30 +6,35 @@ public class Laser : MonoBehaviour
 {
     private Vector2 direction;
     private Vector2 displacment;
+    private Vector2 velocity;
     private Vector2 moveAmount;
-    public float speed;
+    [SerializeField]
+    private float speed;
 
-    private Transform target;
-    Vector3 pos;
+    private Transform playerTransform;
 
-    void Start(){
-        target = GameObject.Find("Player").transform;
-        pos = target.position;
+    private void Start()
+    {
+        playerTransform = GameObject.Find("Player").GetComponent<Transform>();
+
+        displacment = playerTransform.position - transform.position;
+        direction = displacment.normalized;
+        velocity = direction * speed;
+        moveAmount = velocity * Time.fixedDeltaTime;
+
     }
 
-    void Update(){
-        displacment = transform.position - pos;
-        direction = displacment.normalized;
-        moveAmount = direction * speed * Time.deltaTime;
+    private void FixedUpdate()
+    {
+        transform.Translate(moveAmount);
+    }
 
-        transform.Translate(-moveAmount * speed * Time.deltaTime);
-
-        if(transform.position.x == pos.x && transform.position.y == pos.y){
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if(collision.collider.tag != ("Laser"))
+        {
             Destroy(gameObject);
         }
-    }
-
-    void OnCollisionEnter2D(Collision2D col){
-        Destroy(gameObject);
+        
     }
 }
