@@ -2706,6 +2706,11 @@ MonoBehaviour:
   timeDisp: {fileID: 2018204678}
   finishDoor: {fileID: 1147751666}
   levelFinished: 0
+  levelIndex: 0
+  threeStars: 0
+  twoStars: 0
+  rating: {fileID: 0}
+  ratings: []
 --- !u!4 &90726209
 Transform:
   m_ObjectHideFlags: 0
@@ -4580,6 +4585,12 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 969012530}
   m_CullTransparentMesh: 0
+--- !u!1 &993756448 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 832558078770125744, guid: c57bbbbdb7e23d44ba22a93346ebcf32,
+    type: 3}
+  m_PrefabInstance: {fileID: 199092051}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &995977445
 GameObject:
   m_ObjectHideFlags: 0
@@ -5436,6 +5447,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Finsih
       objectReference: {fileID: 0}
+    - target: {fileID: 4124464469088862590, guid: 8977ee65fc2c53a46a5d23def122b844,
+        type: 3}
+      propertyPath: enemy
+      value: 
+      objectReference: {fileID: 993756448}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8977ee65fc2c53a46a5d23def122b844, type: 3}
 --- !u!1001 &1309989988
