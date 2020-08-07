@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class Laser : MonoBehaviour
 {
+    private Vector2 direction;
+    private Vector2 displacment;
+    private Vector2 moveAmount;
     public float speed;
 
     private Transform target;
@@ -16,12 +19,9 @@ public class Laser : MonoBehaviour
     }
 
     void Update(){
-        float distance = Vector3.Distance(transform.localPosition, pos);
-        Vector3 heading = pos - transform.localPosition;
-        Vector3 direction = heading / distance;
-             
-        float deltaSpeed = speed * Time.deltaTime;
-        transform.Translate(direction.x * deltaSpeed, direction.y * deltaSpeed, direction.z * deltaSpeed);
+        displacment = transform.position - target.transform.position;
+        direction = displacment.normalized;
+        moveAmount = direction * speed * Time.deltaTime;
     }
 
     void OnCollisionEnter2D(Collision2D col){
