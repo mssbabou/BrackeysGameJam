@@ -36,7 +36,7 @@ public class FinishDoor : MonoBehaviour
             anim.SetTrigger("Open");
             if(Input.GetKeyDown(KeyCode.E))
             {
-                audio.Play();
+                //audio.Play();
                 FindObjectOfType<Player>().UseDoor();
                 FindObjectOfType<LevelManager>().LevelFinished();
                 PlayerFinishedLevel();

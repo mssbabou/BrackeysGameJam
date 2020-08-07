@@ -19,6 +19,7 @@ TagManager:
   - Spike
   - Unjumpable
   - RecordingPlatformToo
+  - NextLevel
   layers:
   - Default
   - TransparentFX

@@ -11,8 +11,6 @@ public class LevelManager : MonoBehaviour
     public string levelName;
     public bool dontDestroyOnLoad;
 
-    private GameObject nextLevelUI;
-
     void Awake(){
         if(!dontDestroyOnLoad){
             dontDestroyOnLoad = true;
@@ -21,7 +19,6 @@ public class LevelManager : MonoBehaviour
         unlockedLevels = PlayerPrefs.GetInt("Unlocked");
         string scenename = SceneManager.GetActiveScene().name;
         if(scenename.Contains("Level")){
-            nextLevelUI = GameObject.Find("Canvas").transform.Find("NextLevel").gameObject;
         }
     }
 
@@ -33,13 +30,11 @@ public class LevelManager : MonoBehaviour
         PlayerPrefs.SetInt("Unlocked", unlockedLevels);
         levelName = "Level" + currentLevel.ToString();
         
-        Invoke("Invoked", 2f);
+        Invoke("Invoked", 2);
     }
 
     void Invoked(){
-        nextLevelUI = GameObject.Find("Canvas").transform.Find("NextLevel").gameObject;
-        nextLevelUI.SetActive(true);
-        Time.timeScale = 0;
+        SceneManager.LoadScene("LevelFinished");
     }
 
     public void LoadLevel(string _levelName){
