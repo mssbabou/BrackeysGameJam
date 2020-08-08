@@ -10,6 +10,15 @@ public class UIToggle : MonoBehaviour
     public Sprite yes;
     public Sprite no;
 
+    public bool musicToggle;
+
+    void Start(){
+        if(musicToggle)
+            activated = !FindObjectOfType<MusciManager>().mute;
+        else
+            activated = !FindObjectOfType<MusciManager>().muteSFX;
+    }
+
     public void OnClick(){
         activated = !activated;
         if(activated){
@@ -23,6 +32,6 @@ public class UIToggle : MonoBehaviour
         FindObjectOfType<MusciManager>().mute = !activated;
     }
     public void sfx(){
-
+        FindObjectOfType<MusciManager>().muteSFX = !activated;
     }
 }

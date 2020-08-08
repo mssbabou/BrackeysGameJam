@@ -24,12 +24,15 @@ public class LevelTimeScript : MonoBehaviour
     private bool stop = false;
 
     [Header("Rating")]
+    private int allStars;
     public int levelIndex;
     public Text highscore;
     public static int stars;
     public float threeStars, twoStars;
     public Image rating;
     public Sprite[] ratings;
+
+    static bool[] doneLevels = new bool[6];
 
     // Start is called before the first frame update
     void Start()
@@ -38,11 +41,19 @@ public class LevelTimeScript : MonoBehaviour
         currentPlayTime = 0;
         timeToDisplay = 0;
         if(levelFinished){
+            allStars =  PlayerPrefs.GetInt("AllStars");
+            if(!doneLevels[levelIndex]){
+                allStars += stars;
+                doneLevels[levelIndex] = true;
+            }
             rating.sprite = ratings[stars];
             string playerPrefs = "LevelStars" + levelIndex;
             if(stars > PlayerPrefs.GetInt(playerPrefs)){
+                allStars += stars - PlayerPrefs.GetInt(playerPrefs);
                 PlayerPrefs.SetInt(playerPrefs, stars);
             }
+            print("Stars: " + allStars);
+            PlayerPrefs.SetInt("AllStars", allStars);
             stars = PlayerPrefs.GetInt(playerPrefs);
             highscore.text = "Best: " + stars + " stars";
         }
