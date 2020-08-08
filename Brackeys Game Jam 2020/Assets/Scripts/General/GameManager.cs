@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
+    public int currentLevel = 0;
     public GameObject pausePanel;
     bool paused;
     public Sprite pauseBtn;

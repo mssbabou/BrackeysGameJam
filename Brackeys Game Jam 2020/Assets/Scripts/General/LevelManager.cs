@@ -23,9 +23,11 @@ public class LevelManager : MonoBehaviour
     }
 
     public void LevelFinished(){
+        currentLevel = FindObjectOfType<GameManager>().currentLevel;
         currentLevel++;
-        if(unlockedLevels <= currentLevel){
+        if(unlockedLevels < currentLevel){
             unlockedLevels = currentLevel;
+            FindObjectOfType<GameManager>().currentLevel = currentLevel;
         }
         PlayerPrefs.SetInt("Unlocked", unlockedLevels);
         levelName = "Level" + currentLevel.ToString();
