@@ -23,7 +23,7 @@ public class LevelManager : MonoBehaviour
     }
 
     public void LevelFinished(){
-        currentLevel++;
+        currentLevel = FindObjectOfType<GameManager>().currentLevel;
         if(unlockedLevels <= currentLevel){
             unlockedLevels = currentLevel;
         }
