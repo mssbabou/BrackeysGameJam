@@ -5,7 +5,6 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody2D))]
 public class PlayerMovement : MonoBehaviour
 {
-    private Player player;
     Transform transform;
     Rigidbody2D rigidbody2D;
     float input;
@@ -34,14 +33,11 @@ public class PlayerMovement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        player = GameObject.Find("Player").GetComponent<Player>().playerDeath += stopInput();
         transform = GetComponent<Transform>();
         rigidbody2D = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
         StartCoroutine (WalkAudio());
     }
-
-    private void stopInput();
 
     private void Update()
     {

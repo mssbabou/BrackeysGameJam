@@ -2687,7 +2687,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bae7aeb0588d96c4cb605edec7bde186, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentLevel: 1
   pausePanel: {fileID: 506615261}
   pauseBtn: {fileID: 21300000, guid: 1eacf8f523cc32c448a0879aac6d681a, type: 3}
   pausedBtn: {fileID: 21300000, guid: 3e9e0aa93bba9e54e9f53efb46d63697, type: 3}
@@ -2708,7 +2707,6 @@ MonoBehaviour:
   finishDoor: {fileID: 1147751666}
   levelFinished: 0
   levelIndex: 0
-  highscore: {fileID: 0}
   threeStars: 0
   twoStars: 0
   rating: {fileID: 0}

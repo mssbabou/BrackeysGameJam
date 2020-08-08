@@ -9,7 +9,7 @@ EditorBuildSettings:
     path: Assets/Scenes/_Loader.unity
     guid: ee22ebd29e7444e4593355fbd0faf892
   - enabled: 1
-    path: Assets/Scenes/Levels/Level06.unity
+    path: Assets/Scenes/BossFight.unity
     guid: d0081d8ce395dd748b90aea60db8c79f
   - enabled: 1
     path: Assets/Scenes/Menu.unity

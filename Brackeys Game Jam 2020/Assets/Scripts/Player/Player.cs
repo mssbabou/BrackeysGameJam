@@ -5,8 +5,6 @@ using UnityEngine.UI;
 
 public class Player : MonoBehaviour
 {
-    public delegate void playerDie();
-    public playerDie playerDeath;
     public int maxHealth = 10;
     private int health;
 
@@ -67,7 +65,6 @@ public class Player : MonoBehaviour
     }
 
     void Die(){
-        playerDeath();
         die.Play();
         deathPanel.SetActive(true);
         hit.SetActive(false);
