@@ -116,6 +116,14 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.tag == "SlowDown") ;     
+        {
+            rigidbody2D.velocity = rigidbody2D.velocity / 10;
+        }
+    }
+
     void Flip()
     {
         facingRight = !facingRight;

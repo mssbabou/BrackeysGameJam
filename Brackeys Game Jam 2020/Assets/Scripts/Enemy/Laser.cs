@@ -16,12 +16,11 @@ public class Laser : MonoBehaviour
     private void Start()
     {
         playerTransform = GameObject.Find("Player").GetComponent<Transform>();
-
+            
         displacment = playerTransform.position - transform.position;
         direction = displacment.normalized;
         velocity = direction * speed;
         moveAmount = velocity * Time.fixedDeltaTime;
-
     }
 
     private void FixedUpdate()
