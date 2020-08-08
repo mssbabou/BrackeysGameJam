@@ -39,7 +39,7 @@ public class LevelManager : MonoBehaviour
         SceneManager.LoadScene("LevelFinished");
     }
 
-    public void LoadLevel(string _levelName){
+    public void LoadLevel(string levelName){
         SceneManager.LoadScene(levelName);
     }
 }
