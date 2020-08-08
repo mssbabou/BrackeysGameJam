@@ -1042,8 +1042,8 @@ MonoBehaviour:
   levelFinished: 0
   levelIndex: 5
   highscore: {fileID: 0}
-  threeStars: 0
-  twoStars: 0
+  threeStars: 55
+  twoStars: 70
   rating: {fileID: 0}
   ratings: []
 --- !u!114 &274966167

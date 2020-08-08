@@ -6289,8 +6289,8 @@ MonoBehaviour:
   levelFinished: 0
   levelIndex: 2
   highscore: {fileID: 0}
-  threeStars: 0
-  twoStars: 0
+  threeStars: 36
+  twoStars: 46
   rating: {fileID: 0}
   ratings: []
 --- !u!1 &1355208293

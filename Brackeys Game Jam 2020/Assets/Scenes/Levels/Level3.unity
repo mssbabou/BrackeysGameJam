@@ -1778,8 +1778,8 @@ MonoBehaviour:
   levelFinished: 0
   levelIndex: 3
   highscore: {fileID: 0}
-  threeStars: 0
-  twoStars: 0
+  threeStars: 54
+  twoStars: 64
   rating: {fileID: 0}
   ratings: []
 --- !u!4 &90726209
@@ -10187,12 +10187,12 @@ PrefabInstance:
     - target: {fileID: 4506092938625046299, guid: ddc8141fda648c64fa5e49657bfd3ec3,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -9.3
+      value: -18
       objectReference: {fileID: 0}
     - target: {fileID: 4506092938625046299, guid: ddc8141fda648c64fa5e49657bfd3ec3,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 25.6
+      value: -8.2
       objectReference: {fileID: 0}
     - target: {fileID: 4506092938625046299, guid: ddc8141fda648c64fa5e49657bfd3ec3,
         type: 3}
