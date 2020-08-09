@@ -23,7 +23,6 @@ public class UIToggle : MonoBehaviour
         activated = !activated;
         if(activated){
             GetComponent<Image>().sprite = yes;
-            FindObjectOfType<GameManager>().Exit();
         }else{
             GetComponent<Image>().sprite = no;
         }
