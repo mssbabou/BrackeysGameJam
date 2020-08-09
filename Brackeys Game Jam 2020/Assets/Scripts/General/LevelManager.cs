@@ -24,8 +24,10 @@ public class LevelManager : MonoBehaviour
 
     public void LevelFinished(){
         currentLevel = FindObjectOfType<GameManager>().currentLevel;
-        if(unlockedLevels <= currentLevel){
+        currentLevel++;
+        if(unlockedLevels < currentLevel){
             unlockedLevels = currentLevel;
+            FindObjectOfType<GameManager>().currentLevel = currentLevel;
         }
         PlayerPrefs.SetInt("Unlocked", unlockedLevels);
         levelName = "Level" + currentLevel.ToString();
@@ -37,7 +39,7 @@ public class LevelManager : MonoBehaviour
         SceneManager.LoadScene("LevelFinished");
     }
 
-    public void LoadLevel(string _levelName){
+    public void LoadLevel(string levelName){
         SceneManager.LoadScene(levelName);
     }
 }

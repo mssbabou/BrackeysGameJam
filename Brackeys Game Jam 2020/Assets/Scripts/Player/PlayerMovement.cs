@@ -5,7 +5,6 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody2D))]
 public class PlayerMovement : MonoBehaviour
 {
-    private Player player;
     Transform transform;
     Rigidbody2D rigidbody2D;
     float input;
@@ -31,20 +30,29 @@ public class PlayerMovement : MonoBehaviour
     public AudioSource jump;
     public AudioSource walk;
 
+    private bool dead = false;
+
     // Start is called before the first frame update
     void Start()
     {
-        player = GameObject.Find("Player").GetComponent<Player>().playerDeath += stopInput();
+        GetComponent<Player>().playerDied += stopInput;
         transform = GetComponent<Transform>();
         rigidbody2D = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
         StartCoroutine (WalkAudio());
     }
 
-    private void stopInput();
+    private void stopInput()
+    {
+        dead = true;
+    }
 
     private void Update()
     {
+        if (dead)
+        {
+            GetComponent<PlayerMovement>().enabled = false;
+        }
         input = Input.GetAxisRaw("Horizontal");
         if(input > 0 || input < 0){
             isMoving = true;
@@ -117,14 +125,6 @@ public class PlayerMovement : MonoBehaviour
         if (collision.collider.tag == "Jumpable")
         {
             canJump = false;
-        }
-    }
-
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.tag == "SlowDown") ;     
-        {
-            rigidbody2D.velocity = rigidbody2D.velocity / 10;
         }
     }
 

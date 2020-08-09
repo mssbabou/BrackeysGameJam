@@ -6,8 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    public int currentLevel;
-
+    public int currentLevel = 0;
     public GameObject pausePanel;
     bool paused;
     public Sprite pauseBtn;
@@ -16,6 +15,7 @@ public class GameManager : MonoBehaviour
     public bool loaderScene;
 
     void Start(){
+        DontDestroyOnLoad(this);
         Time.timeScale = 1;
         if(loaderScene){
             SceneManager.LoadScene("Menu");
@@ -60,13 +60,13 @@ public class GameManager : MonoBehaviour
     }
 
     public void NextLevel(){
-        LevelManager l = FindObjectOfType<LevelManager>();
-        l.LoadLevel(l.levelName);
+        LevelManager levelManager = FindObjectOfType<LevelManager>();
+        levelManager.LoadLevel(levelManager.levelName);
     }
 
     public void LoadLevel(int levelIndex){
-        LevelManager l = FindObjectOfType<LevelManager>();
-        if(l.unlockedLevels >= levelIndex){
+        LevelManager levelManager = FindObjectOfType<LevelManager>();
+        if(levelManager.unlockedLevels >= levelIndex){
             string str = "Level" + levelIndex.ToString();
             Load(str);
         }

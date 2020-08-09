@@ -7,7 +7,8 @@ public class SelectorButton : MonoBehaviour
 {
     public int index;
 
-    void Start(){
+    void Start()
+    {
         if(FindObjectOfType<LevelManager>().unlockedLevels < index){
             GetComponent<Button>().interactable = false;
         }

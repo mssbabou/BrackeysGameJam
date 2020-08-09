@@ -5,10 +5,11 @@ using UnityEngine.UI;
 
 public class Player : MonoBehaviour
 {
-    public delegate void playerDie();
-    public playerDie playerDeath;
     public int maxHealth = 10;
     private int health;
+
+    public delegate void PlayerDie();
+    public PlayerDie playerDied;
 
     public GameObject hitFeedback;
 
@@ -67,7 +68,10 @@ public class Player : MonoBehaviour
     }
 
     void Die(){
-        playerDeath();
+        if(playerDied != null)
+        {
+        playerDied();
+        }
         die.Play();
         deathPanel.SetActive(true);
         hit.SetActive(false);

@@ -6252,7 +6252,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bae7aeb0588d96c4cb605edec7bde186, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentLevel: 2
+  currentLevel: 0
   pausePanel: {fileID: 589617083}
   pauseBtn: {fileID: 21300000, guid: 1eacf8f523cc32c448a0879aac6d681a, type: 3}
   pausedBtn: {fileID: 21300000, guid: 3e9e0aa93bba9e54e9f53efb46d63697, type: 3}
@@ -6287,10 +6287,10 @@ MonoBehaviour:
   timeDisp: {fileID: 1787623689}
   finishDoor: {fileID: 811778932}
   levelFinished: 0
-  levelIndex: 0
+  levelIndex: 2
   highscore: {fileID: 0}
-  threeStars: 0
-  twoStars: 0
+  threeStars: 36
+  twoStars: 46
   rating: {fileID: 0}
   ratings: []
 --- !u!1 &1355208293
@@ -8623,12 +8623,12 @@ PrefabInstance:
     - target: {fileID: 4506092938625046299, guid: ddc8141fda648c64fa5e49657bfd3ec3,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -12.6
+      value: -10.1
       objectReference: {fileID: 0}
     - target: {fileID: 4506092938625046299, guid: ddc8141fda648c64fa5e49657bfd3ec3,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -5.3
+      value: -5
       objectReference: {fileID: 0}
     - target: {fileID: 4506092938625046299, guid: ddc8141fda648c64fa5e49657bfd3ec3,
         type: 3}

@@ -17,10 +17,14 @@ public class Rocket : MonoBehaviour
     public GameObject explosionPrefab;
 
     bool flying;
-
+    private void Start()
+    {
+        rigidbody.isKinematic = true;
+    }
     void FixedUpdate(){
         if(flying)
         {
+            rigidbody.isKinematic = false;
 
             transform.localPosition = (Vector2)transform.localPosition + (Vector2.up * speed * Time.fixedDeltaTime);
         }
